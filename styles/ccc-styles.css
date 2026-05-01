@@ -1,0 +1,309 @@
+/* ============================================================
+   The Count, the Castle, & the Curse — Journal Stylesheet
+   Scoped to .ccc-adventure so it never bleeds into other docs
+   ============================================================ */
+
+/* ── Kill Foundry's parchment on pages that use this adventure ── */
+/* :has() targets only journal containers that hold .ccc-adventure */
+.journal-entry-page.text:has(.ccc-adventure) .content,
+.journal-page-content:has(.ccc-adventure),
+.editor-content:has(.ccc-adventure) {
+  background: none !important;
+  background-image: none !important;
+}
+
+/* ── Base wrapper ────────────────────────────────────────────── */
+.ccc-adventure {
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #1a0a00;
+  max-width: 780px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 1.5em 2em;
+}
+
+/* ── Headings ─────────────────────────────────────────────────── */
+.ccc-adventure h2 {
+  font-family: 'Palatino Linotype', Palatino, serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  color: #5a0000;
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 4px;
+  margin: 0 0 14px 0;
+  text-transform: uppercase;
+}
+
+.ccc-adventure h3 {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #6b1a00;
+  border-left: 4px solid #8b0000;
+  padding-left: 8px;
+  margin: 18px 0 6px 0;
+}
+
+/* ── Body text ────────────────────────────────────────────────── */
+.ccc-adventure p {
+  margin: 0 0 6px 0;
+}
+
+/* Atmosphere/intro paragraph — the first plain <p> after h2 */
+.ccc-adventure h2 + p {
+  font-style: italic;
+  color: #3a1a0a;
+  margin-bottom: 12px;
+}
+
+/* ── Feature bullets  ▶ ──────────────────────────────────────── */
+.ccc-adventure p.feature {
+  position: relative;
+  background: rgba(139, 0, 0, 0.05);
+  border-left: 3px solid #8b0000;
+  border-radius: 0 4px 4px 0;
+  padding: 5px 10px 5px 12px;
+  margin: 10px 0 4px 0;
+  font-weight: 500;
+}
+
+.ccc-adventure p.feature::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #8b0000;
+}
+
+/* ── Sub-bullets  - ───────────────────────────────────────────── */
+.ccc-adventure p.sub {
+  padding-left: 24px;
+  color: #2a2a2a;
+  font-style: italic;
+  margin: 2px 0 2px 0;
+}
+
+.ccc-adventure p.sub::before {
+  content: '–';
+  margin-right: 6px;
+  color: #8b0000;
+  font-style: normal;
+}
+
+/* ── Stat blocks (HP / ATK lines) ────────────────────────────── */
+.ccc-adventure p.statblock {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+  background: #f5ede0;
+  border: 1px solid #c8a080;
+  border-radius: 3px;
+  padding: 4px 10px;
+  margin: 4px 0;
+  color: #1a0a00;
+}
+
+/* ── Bold keywords ────────────────────────────────────────────── */
+.ccc-adventure strong {
+  color: #5a0000;
+  font-weight: 700;
+}
+
+/* ── @UUID / content-link items ──────────────────────────────── */
+.ccc-adventure a.content-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #8b0000;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #c8707070;
+  border-radius: 4px;
+  padding: 1px 5px 1px 5px;
+  background: rgba(139, 0, 0, 0.04);
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.ccc-adventure a.content-link:hover {
+  color: #cc2200;
+  border-color: #cc2200;
+  background: rgba(139, 0, 0, 0.1);
+}
+
+/* Icon that Foundry injects before the link text */
+.ccc-adventure a.content-link i {
+  font-size: 0.78em;
+  color: #a03030;
+  opacity: 1;
+  flex-shrink: 0;
+}
+
+.ccc-adventure a.content-link:hover i {
+  color: #cc2200;
+}
+
+/* Broken / unresolved links */
+.ccc-adventure a.content-link.broken {
+  color: #888;
+  border-color: #bbb;
+  background: rgba(0,0,0,0.03);
+  font-style: italic;
+}
+
+.ccc-adventure a.content-link.broken i {
+  color: #aaa;
+}
+
+/* ── Roll tables  (d4 / d6) ──────────────────────────────────── */
+.ccc-adventure table.roll-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12px 0;
+  font-size: 0.9rem;
+}
+
+.ccc-adventure table.roll-table thead tr {
+  background: #5a0000;
+  color: #f5ede0;
+}
+
+.ccc-adventure table.roll-table th {
+  padding: 6px 10px;
+  text-align: left;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.ccc-adventure table.roll-table td {
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.ccc-adventure table.roll-table tr:nth-child(even) td {
+  background: #faf4ec;
+}
+
+.ccc-adventure table.roll-table tr:hover td {
+  background: #f0e0cc;
+}
+
+/* First column (die result number) */
+.ccc-adventure table.roll-table td:first-child {
+  font-weight: bold;
+  color: #5a0000;
+  text-align: center;
+  width: 40px;
+  white-space: nowrap;
+}
+
+/* ── Separator between sections ──────────────────────────────── */
+.ccc-adventure hr {
+  border: none;
+  border-top: 1px solid #c8a080;
+  margin: 16px 0;
+}
+
+/* ── Dark-mode override (Foundry dark theme) ─────────────────── */
+@media (prefers-color-scheme: dark) {
+  .ccc-adventure {
+    color: #e8d8c0;
+    background: #1a0e08;
+  }
+
+  .ccc-adventure h2 {
+    color: #cc4444;
+    border-bottom-color: #882222;
+  }
+
+  .ccc-adventure h3 {
+    color: #dd6644;
+    border-left-color: #882222;
+  }
+
+  .ccc-adventure h2 + p {
+    color: #c8b090;
+  }
+
+  .ccc-adventure p.feature {
+    background: rgba(200, 50, 50, 0.1);
+    border-left-color: #cc4444;
+  }
+
+  .ccc-adventure p.sub {
+    color: #c0b0a0;
+  }
+
+  .ccc-adventure p.sub::before {
+    color: #cc4444;
+  }
+
+  .ccc-adventure p.statblock {
+    background: #2a1a0a;
+    border-color: #6a4030;
+    color: #e8d8c0;
+  }
+
+  .ccc-adventure strong {
+    color: #dd7755;
+  }
+
+  .ccc-adventure table.roll-table thead tr {
+    background: #6a1010;
+    color: #f0e0cc;
+  }
+
+  .ccc-adventure table.roll-table td {
+    border-bottom-color: #4a3020;
+    color: #e0d0b8;
+  }
+
+  .ccc-adventure table.roll-table tr:nth-child(even) td {
+    background: #2a1a0e;
+  }
+
+  .ccc-adventure table.roll-table tr:hover td {
+    background: #3a2010;
+  }
+
+  .ccc-adventure table.roll-table td:first-child {
+    color: #cc4444;
+  }
+
+  .ccc-adventure hr {
+    border-top-color: #6a4030;
+  }
+
+  .ccc-adventure a.content-link {
+    color: #dd6644;
+    border-color: #884433;
+    background: rgba(200, 80, 40, 0.08);
+  }
+
+  .ccc-adventure a.content-link i {
+    color: #cc5533;
+  }
+
+  .ccc-adventure a.content-link:hover {
+    color: #ff8866;
+    border-color: #ff8866;
+    background: rgba(200, 80, 40, 0.18);
+  }
+
+  .ccc-adventure a.content-link:hover i {
+    color: #ff8866;
+  }
+
+  .ccc-adventure a.content-link.broken {
+    color: #666;
+    border-color: #555;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .ccc-adventure a.content-link.broken i {
+    color: #666;
+  }
+}

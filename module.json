@@ -1,0 +1,85 @@
+{
+  "id": "ccc-vagabond",
+  "title": "Count the Castle and the Curse for Vagabond",
+  "version": "0.9.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "Gus",
+      "discord": "gus4294",
+      "flags": {}
+    },
+    {
+      "name": "Deficient Master",
+      "url": "https://youtu.be/hNNTk2Rbljo?si=yAoGMNZ1P56WLCpg",
+      "flags": {}
+    }
+  ],
+  "styles": [
+        "styles/ccc-styles.css"
+  ],
+  "flags": {
+    "canUpload": true
+  },
+  "packFolders": [
+    {
+      "name": "The Count, The Castle & The Curse",
+      "sorting": "m",
+      "color": "#8f0505",
+      "packs": [
+        "adventure"
+      ],
+      "folders": []
+    }
+  ],
+  "packs": [
+    {
+      "name": "adventure",
+      "label": "Adventure",
+      "path": "packs/adventure",
+      "type": "Adventure",
+      "system": "vagabond",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "vagabond",
+        "type": "system",
+        "compatibility": {}
+      }
+    ],
+    "requires": [
+      {
+        "id": "totm-manager",
+        "type": "module",
+        "compatibility": {}
+      },
+      {
+        "id": "macro-button",
+        "type": "module",
+        "compatibility": {}
+      }
+    ],
+    "recommends": [
+      {
+        "id": "item-piles",
+        "type": "module",
+        "compatibility": {}
+      },
+      {
+        "id": "item-piles-vagabond",
+        "type": "module",
+        "compatibility": {}
+      }
+    ]
+  },
+  "description": ""
+}
