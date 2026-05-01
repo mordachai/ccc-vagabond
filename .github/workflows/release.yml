@@ -55,6 +55,7 @@ jobs:
 
           cp module.json ccc-vagabond/
           cp -r styles ccc-vagabond/
+          cp -r scripts ccc-vagabond/
           cp -r assets ccc-vagabond/
           cp -r packs ccc-vagabond/
 
