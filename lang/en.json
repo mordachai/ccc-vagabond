@@ -1,0 +1,6 @@
+{
+  "CCC.Settings.UseStressLevel.Name": "Use Stress Level",
+  "CCC.Settings.UseStressLevel.Hint": "Enable the Stress Level tracker overlay. Increases difficulty of all d20 rolls by the current stress value.",
+  "CCC.Settings.GlobalStressLevel.Name": "Global Stress Level",
+  "CCC.UI.StressLevel": "Stress Level"
+}

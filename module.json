@@ -24,6 +24,13 @@
   "scripts": [
         "scripts/stress-tracker.js"
   ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
   "flags": {
     "canUpload": true
   },

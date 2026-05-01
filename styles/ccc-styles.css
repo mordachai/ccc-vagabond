@@ -207,6 +207,15 @@
   margin: 16px 0;
 }
 
+/* ── Stress-modified difficulty in chat cards ────────────────── */
+.ccc-stressed-difficulty {
+  text-shadow:
+    1px 1px 0 #ff4500,
+    -1px 1px 0 #ff4500,
+    -1px -1px 0 #ff4500,
+    1px -1px 0 #ff4500 !important;
+}
+
 /* ── Stress Level Tracker UI ─────────────────────────────────── */
 #stress-tracker-ui {
   position: fixed;
