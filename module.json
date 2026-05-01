@@ -1,7 +1,7 @@
 {
   "id": "ccc-vagabond",
   "title": "Count the Castle and the Curse for Vagabond",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "compatibility": {
     "minimum": "13",
     "verified": "13"
@@ -20,6 +20,9 @@
   ],
   "styles": [
         "styles/ccc-styles.css"
+  ],
+  "scripts": [
+        "scripts/stress-tracker.js"
   ],
   "flags": {
     "canUpload": true

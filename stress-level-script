@@ -1,0 +1,111 @@
+/**
+ * PASTE IN WORLD SCRIPTER (REQUIRES WORLD SCRIPTER MODULE)
+ * STRESS LEVEL (TOP RIGHT): LEFT CLICK +1 / RIGHT CLICK -1
+ * Global Stress Tracker 
+ * v13 Compatible - Permanent Active Effect Logic
+ */
+
+const STRESS_SETTING = "stress-level-value";
+const EFFECT_LABEL = "Global Stress Penalty";
+
+function registerStressSetting() {
+    if (!game.settings.settings.has(`world.${STRESS_SETTING}`)) {
+        game.settings.register("world", STRESS_SETTING, {
+            name: "Global Stress Level",
+            scope: "world",
+            config: false,
+            type: Number,
+            default: 0,
+            onChange: () => renderStressUI()
+        });
+    }
+}
+
+function renderStressUI() {
+    if (!game.settings.settings.has(`world.${STRESS_SETTING}`)) return;
+    let element = document.getElementById("stress-tracker-ui");
+    const val = game.settings.get("world", STRESS_SETTING);
+    
+    if (!element) {
+        element = document.createElement("div");
+        element.id = "stress-tracker-ui";
+        element.style.cssText = `
+            position: fixed;
+            top: 10px;
+            right: 400px;
+            z-index: 100;
+            padding: 5px 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: black;
+            font-family: "Germania", serif;
+            font-size: 1.6em;
+            font-weight: normal;
+            border: 1px solid #444;
+            border-radius: 5px;
+            text-shadow:
+              1px 1px 0 #ff4500,
+              -1px 1px 0 #ff4500,
+              -1px -1px 0 #ff4500,
+              1px -1px 0 #ff4500;
+            cursor: pointer;
+            user-select: none;
+            pointer-events: all;
+        `;
+        document.body.appendChild(element);
+
+        element.addEventListener("click", (e) => {
+            if (!game.user.isGM) return;
+            let current = game.settings.get("world", STRESS_SETTING);
+            if (current < 10) updateStressValue(current + 1);
+        });
+
+        element.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+            if (!game.user.isGM) return;
+            let current = game.settings.get("world", STRESS_SETTING);
+            if (current > 0) updateStressValue(current - 1);
+        });
+    }
+    element.innerHTML = `Stress Level: ${val}`;
+}
+
+async function updateStressValue(newVal) {
+    if (!game.user.isGM) return;
+
+    await game.settings.set("world", STRESS_SETTING, newVal);
+    const penalty = -Math.abs(newVal);
+
+    for (let actor of game.actors.filter(a => a.type === "character")) {
+        // Find existing Stress effect
+        let effect = actor.effects.find(e => e.getFlag("world", "isStressEffect"));
+        
+        if (newVal === 0) {
+            if (effect) await effect.delete();
+            continue;
+        }
+
+        const effectData = {
+            name: EFFECT_LABEL,
+            icon: "icons/magic/control/fear-fright-white.webp",
+            origin: actor.uuid,
+            changes: [{
+                key: "system.universalCheckBonus",
+                value: penalty,
+                mode: CONST.ACTIVE_EFFECT_MODES.ADD
+            }],
+            flags: { world: { isStressEffect: true } }
+        };
+
+        if (effect) {
+            await effect.update(effectData);
+        } else {
+            await actor.createEmbeddedDocuments("ActiveEffect", [effectData]);
+        }
+    }
+}
+
+// Initialization
+registerStressSetting();
+Hooks.on("ready", () => renderStressUI());
+Hooks.on("renderSceneNavigation", () => renderStressUI());
+if (game.ready) renderStressUI();
