@@ -2,6 +2,7 @@ import {
   TRAITS_TABLE_NAME,
   WEAKNESSES_TABLE_NAME,
   RESISTANCE_ITEM_NAME,
+  getResistanceDie,
   getVampiricFlags,
   setVampiricFlags
 } from "./data.js";
@@ -67,7 +68,8 @@ export async function applyVampiricCurse(actor) {
   const trait = await drawUniqueItem(actor, traitsTable);
   const weakness = await drawUniqueItem(actor, weaknessesTable);
 
-  const hpRoll = new Roll("1d8");
+  const dieFormula = getResistanceDie();
+  const hpRoll = new Roll(dieFormula);
   await hpRoll.evaluate();
 
   const toCreate = [];
@@ -99,17 +101,40 @@ export async function applyVampiricCurse(actor) {
 
   const traitImg = trait?.img ?? "icons/svg/mystery-man.svg";
   const weakImg = weakness?.img ?? "icons/svg/mystery-man.svg";
+  const portrait = actor.img ?? "icons/svg/mystery-man.svg";
+  const title = game.i18n?.localize?.("CCC.Vampiric.CardTitle") ?? "Vampiric Curse";
+  const lblTrait = game.i18n?.localize?.("CCC.Vampiric.LblTrait") ?? "Trait";
+  const lblWeak = game.i18n?.localize?.("CCC.Vampiric.LblWeakness") ?? "Weakness";
+  const lblVHD = game.i18n?.localize?.("CCC.Vampiric.LblVHD") ?? "Vampiric Hit Die";
   const content = `
-    <div class="ccc-vampiric-result">
-      <h3>${actor.name} - Vampiric Curse</h3>
-      <div class="ccc-vampiric-row">
-        <img src="${traitImg}" /> <strong>Trait:</strong> ${trait?.name ?? "—"}
-      </div>
-      <div class="ccc-vampiric-row">
-        <img src="${weakImg}" /> <strong>Weakness:</strong> ${weakness?.name ?? "—"}
-      </div>
-      <div class="ccc-vampiric-row">
-        <strong>Vampiric Hit Die (1d8):</strong> +${hpRoll.total} HP
+    <div class="vagabond-chat-card-v2 ccc-vampiric-result" data-card-type="vampiric-curse-result" data-actor-id="${actor.id}">
+      <h3 class="actor-name-header">${actor.name}</h3>
+      <div class="card-body">
+        <div class="card-header">
+          <div class="header-icon"><img src="${portrait}" alt="${actor.name}" /></div>
+          <div class="header-info">
+            <h2 class="header-title">${title}</h2>
+            <div class="metadata-tags-row">
+              <span class="meta-tag"><i class="fas fa-skull"></i> +${hpRoll.total} VHD</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-description">
+          <div class="item-stats-grid">
+            <div class="stat-row">
+              <span class="stat-label"><img src="${traitImg}" class="ccc-vampiric-inline-icon" /> ${lblTrait}</span>
+              <span class="stat-value">${trait?.name ?? "—"}</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label"><img src="${weakImg}" class="ccc-vampiric-inline-icon" /> ${lblWeak}</span>
+              <span class="stat-value">${weakness?.name ?? "—"}</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label"><i class="fas fa-dice-d8"></i> ${lblVHD} (${dieFormula})</span>
+              <span class="stat-value">+${hpRoll.total} HP</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>`;
   await ChatMessage.create({
@@ -136,7 +161,6 @@ export async function cureActor(actor) {
   await setVampiricFlags(actor, {
     cursedCount: 0,
     hitDicePoints: 0,
-    feedingCount: 0,
     endgame: null
   });
 }

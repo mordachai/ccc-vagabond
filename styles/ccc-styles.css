@@ -299,23 +299,28 @@
 
 .ccc-vampiric-table .col-name { font-weight: 700; color: #dd7755; min-width: 100px; }
 .ccc-vampiric-table .col-num { width: 45px; text-align: center; }
-.ccc-vampiric-table .col-feeding { width: 90px; text-align: center; }
-.ccc-vampiric-table .col-endgame { min-width: 160px; }
-.ccc-vampiric-table .col-actions { text-align: right; width: 1%; white-space: nowrap; }
+.ccc-vampiric-table .col-actions { text-align: center; width: 1%; white-space: nowrap; }
+
+.ccc-vampiric-table .col-trinkets {
+  width: 70px;
+}
+.ccc-vampiric-table .col-trinkets .trinket-count {
+  display: inline-block;
+  min-width: 16px;
+  margin-right: 4px;
+}
+.ccc-vampiric-table button.trinket-give {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  vertical-align: middle;
+}
 
 /* Row variations */
 .ccc-vampiric-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.2); }
 .ccc-vampiric-table tr.forfeit { background: rgba(139, 0, 0, 0.2) !important; }
 
 /* ── UI Components ────────────────────────────────── */
-.feeding-controls {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.feeding-controls .val { font-weight: bold; min-width: 15px; }
-
 .actions-controls {
   display: flex;
   gap: 3px;
@@ -340,40 +345,272 @@
   color: #fff;
 }
 
-/* ── Chat Card Styles (Preserved) ─────────────────── */
-.ccc-vampiric-card {
-  border: 1px solid #6a1010;
-  border-radius: 5px;
+/* ── Chat Card (Vagabond v2 system style) ─────────── */
+/* Inline icon for trait/weakness rows */
+.vagabond-chat-card-v2 .ccc-vampiric-inline-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  border-radius: 3px;
+  border: 1px solid var(--c-dark-blue, #0b1a23);
+  object-fit: cover;
+  margin-right: 4px;
+}
+
+/* Stat-label aligns icon + text */
+.vagabond-chat-card-v2.ccc-vampiric-result .stat-label,
+.vagabond-chat-card-v2.ccc-vampiric-card .stat-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Roll button — duplicates vagabond-apply-direct-button look without class
+   (avoids system handler triggering "no token targeted" errors) */
+.vagabond-chat-card-v2 .card-actions button.ccc-vampiric-btn {
+  width: 100%;
+  background: transparent;
+  background-image: url("/systems/vagabond/assets/ui/chat/apply-direct-bg.webp");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  padding: 6px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Eskapade", serif;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  white-space: normal;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.vagabond-chat-card-v2 .card-actions button.ccc-vampiric-btn:hover:not(:disabled) {
+  filter: brightness(1.6);
+}
+
+.vagabond-chat-card-v2 .card-actions button.ccc-vampiric-btn:disabled,
+.vagabond-chat-card-v2 .card-actions button.ccc-vampiric-btn.locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+.vagabond-chat-card-v2 .card-actions button.ccc-vampiric-btn i {
+  color: #DED656;
+  flex-shrink: 0;
+}
+
+/* Endgame chat card — system roll-strip uses external bg images.
+   Provide fallbacks pointing to system assets via absolute paths. */
+.vagabond-chat-card-v2.ccc-vampiric-endgame .roll-strip {
+  background-image: url("/systems/vagabond/assets/ui/chat/roll-bg.webp");
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .roll-result-banner.result-hit {
+  background-image: url("/systems/vagabond/assets/ui/chat/result-hit-bg.webp");
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .roll-result-banner.result-miss {
+  background-image: url("/systems/vagabond/assets/ui/chat/result-miss-bg.webp");
+}
+
+/* Verdict in card-description (Soul Saved / Soul Forfeit) */
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-verdict {
+  margin: 4px 0;
   padding: 8px;
-  background: linear-gradient(135deg, #1a0e08 0%, #2a0a0a 100%);
+  text-align: center;
+  font-family: "Germania", serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 3px;
+  border: 2px solid;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-verdict.safe {
+  color: #0a4a1a;
+  background: rgba(40, 160, 80, 0.25);
+  border-color: #2a8a44;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-verdict.forfeit {
+  color: #5a0000;
+  background: rgba(180, 20, 20, 0.3);
+  border-color: #8b0000;
+}
+
+/* Neutral roll banner — used while result is hidden */
+.vagabond-chat-card-v2.ccc-vampiric-endgame .roll-result-banner.result-neutral {
+  background-image: url("/systems/vagabond/assets/ui/chat/roll-bg.webp");
+  filter: grayscale(0.5) brightness(0.9);
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-flavor {
+  font-style: italic;
+  opacity: 0.85;
+  margin: 4px 0 0;
+}
+
+/* Verdict roll list */
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 6px 0 8px;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 3px;
+  border-left: 4px solid;
+  font-size: 14px;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row.safe {
+  background: rgba(40, 160, 80, 0.18);
+  border-left-color: #2a8a44;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row.forfeit {
+  background: rgba(180, 20, 20, 0.22);
+  border-left-color: #8b0000;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .idx {
+  font-weight: bold;
+  min-width: 28px;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .vals {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .vals .part {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .vals .part i {
+  opacity: 0.85;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .vals .part.vhd i {
+  color: #8b0000;
+  font-size: small;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .vals .op {
+  opacity: 0.55;
+  font-weight: 600;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .vals .total {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .vals .part.vhd {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .tag {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* ── Verdict card override (only the final outcome card) ─────── */
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .card-body {
+  background-image: url("/modules/ccc-vagabond/assets/ui/dark-bg-300.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-color: #8b0000;
+  color: #f0e0c8;
+}
+
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .actor-name-header {
+  color: #f5d088;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .header-info {
+  border-bottom-color: #c8a060;
+}
+
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .header-info .header-title {
+  color: #ffd9a0;
+  border-bottom-color: #c8a060;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .metadata-tags-row .meta-tag,
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .metadata-tags-row .meta-tag i,
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .metadata-tags-row .tag-separator {
   color: #e8d8c0;
 }
 
-.ccc-vampiric-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .card-description {
+  color: #f0e0c8;
 }
 
-.ccc-vampiric-header img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid #8b0000;
-  object-fit: cover;
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-roll-row.safe {
+  background: rgba(60, 200, 110, 0.22);
+  border-left-color: #4ad07a;
+  color: #d8ffe4;
 }
 
-.ccc-vampiric-btn {
-  width: 100%;
-  padding: 8px;
-  background: #5a0000;
-  color: #f5ede0;
-  border: 1px solid #8b0000;
-  border-radius: 4px;
-  font-weight: 700;
-  cursor: pointer;
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-roll-row.forfeit {
+  background: rgba(220, 40, 40, 0.28);
+  border-left-color: #ff5050;
+  color: #ffd8c8;
 }
+
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-roll-row .vals .part i {
+  color: inherit;
+  opacity: 0.95;
+}
+
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-roll-row .vals .part.vhd i {
+  color: #ff6060;
+}
+
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-verdict.safe {
+  color: #d8ffe4;
+  background: rgba(60, 200, 110, 0.3);
+  border-color: #4ad07a;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-verdict.forfeit {
+  color: #ffd0c0;
+  background: rgba(220, 40, 40, 0.35);
+  border-color: #ff5050;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Audit dialog row colors */
+.ccc-vampiric-audit tr.safe td { background: rgba(40, 160, 80, 0.12); }
+.ccc-vampiric-audit tr.forfeit td { background: rgba(180, 20, 20, 0.18); }
 
 /* ── Dark Mode Overrides ─────────────────────────── */
 @media (prefers-color-scheme: dark) {
