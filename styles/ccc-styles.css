@@ -612,6 +612,173 @@
 .ccc-vampiric-audit tr.safe td { background: rgba(40, 160, 80, 0.12); }
 .ccc-vampiric-audit tr.forfeit td { background: rgba(180, 20, 20, 0.18); }
 
+/* ── Scaling Encounters Panel ────────────────────── */
+.ccc-encounter-panel .window-content {
+  background: #2a1010;
+  color: #f4ead8;
+  padding: 0.6rem;
+}
+
+.ccc-encounter-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ccc-encounter-controls {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.ccc-encounter-roll-btn {
+  flex: 1;
+  background: #5a0000;
+  color: #f4ead8;
+  border: 1px solid #8b0000;
+  border-radius: 3px;
+  padding: 0.5rem 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.05rem;
+}
+
+.ccc-encounter-roll-btn:hover {
+  background: #8b0000;
+}
+
+.ccc-encounter-reset-all-btn {
+  background: rgba(0,0,0,0.3);
+  color: #f4ead8;
+  border: 1px solid #5a3030;
+  border-radius: 3px;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+}
+
+.ccc-encounter-reset-all-btn:hover {
+  background: rgba(139, 0, 0, 0.4);
+}
+
+.ccc-encounter-result {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid #8b0000;
+  border-radius: 4px;
+  padding: 0.6rem;
+}
+
+.ccc-encounter-result-header {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.ccc-encounter-result-header img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #8b0000;
+}
+
+.ccc-encounter-result-meta { flex: 1; }
+
+.ccc-encounter-result-meta h3 {
+  margin: 0 0 0.3rem 0;
+  color: #dd7755;
+  font-size: 1.1rem;
+}
+
+.ccc-encounter-result-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.ccc-encounter-result-tags .tag {
+  background: rgba(139, 0, 0, 0.4);
+  border: 1px solid #5a0000;
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+
+.ccc-encounter-result-tags .tag-outcome {
+  background: rgba(220, 119, 85, 0.25);
+  border-color: #dd7755;
+}
+
+.ccc-encounter-result-text {
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+.ccc-encounter-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.ccc-encounter-table thead tr {
+  background: #5a0000;
+  color: #f4ead8;
+}
+
+.ccc-encounter-table th,
+.ccc-encounter-table td {
+  padding: 0.3rem 0.4rem;
+  border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+  vertical-align: middle;
+}
+
+.ccc-encounter-table .col-idx { width: 28px; text-align: center; }
+.ccc-encounter-table .col-portrait { width: 40px; }
+.ccc-encounter-table .col-order { width: 70px; text-align: center; }
+.ccc-encounter-table .col-actions { width: 1%; white-space: nowrap; text-align: center; }
+
+.ccc-encounter-portrait {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid #5a0000;
+  display: block;
+}
+
+.ccc-encounter-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.2); }
+
+.ccc-encounter-table .order-count {
+  display: inline-block;
+  min-width: 36px;
+  padding: 0.1rem 0.35rem;
+  border: 1px solid #5a3030;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.25);
+  font-weight: 700;
+}
+
+.ccc-encounter-table .order-count.at-max {
+  background: rgba(220, 119, 85, 0.3);
+  border-color: #dd7755;
+  color: #ffd9c5;
+}
+
+.ccc-encounter-table button {
+  background: rgba(0,0,0,0.3);
+  color: #f4ead8;
+  border: 1px solid #5a3030;
+  border-radius: 3px;
+  padding: 0.2rem 0.45rem;
+  cursor: pointer;
+  margin: 0 1px;
+}
+
+.ccc-encounter-table button:hover {
+  background: rgba(139, 0, 0, 0.45);
+  border-color: #8b0000;
+}
+
 /* ── Dark Mode Overrides ─────────────────────────── */
 @media (prefers-color-scheme: dark) {
   .ccc-adventure { color: #e8d8c0; background: #1a0e08; }

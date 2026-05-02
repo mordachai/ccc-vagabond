@@ -1,0 +1,57 @@
+<div class="ccc-encounter-panel-body">
+  <div class="ccc-encounter-controls">
+    <button type="button" class="ccc-encounter-roll-btn" data-action="roll">
+      <i class="fas fa-dice-d6"></i> {{localize "CCC.Encounter.RollBtn"}}
+    </button>
+    <button type="button" class="ccc-encounter-reset-all-btn" data-action="resetAll" title="{{localize 'CCC.Encounter.ResetAll'}}">
+      <i class="fas fa-rotate-left"></i> {{localize "CCC.Encounter.ResetAll"}}
+    </button>
+  </div>
+
+  {{#if result}}
+    <div class="ccc-encounter-result">
+      <div class="ccc-encounter-result-header">
+        <img src="{{result.actorImg}}" alt="{{result.name}}" />
+        <div class="ccc-encounter-result-meta">
+          <h3>{{{result.linkHtml}}}</h3>
+          <div class="ccc-encounter-result-tags">
+            {{#if result.roll}}<span class="tag"><i class="fas fa-dice-d6"></i> {{result.roll}}</span>{{/if}}
+            <span class="tag tag-outcome"><i class="fas fa-hashtag"></i> {{localize "CCC.Encounter.Outcome"}} {{result.outcome}}/4</span>
+          </div>
+        </div>
+      </div>
+      <div class="ccc-encounter-result-text">{{{result.text}}}</div>
+    </div>
+  {{/if}}
+
+  <table class="ccc-encounter-table">
+    <thead>
+      <tr>
+        <th class="col-idx">#</th>
+        <th class="col-portrait"></th>
+        <th class="col-name">{{localize "CCC.Encounter.Col.NPC"}}</th>
+        <th class="col-order">{{localize "CCC.Encounter.Col.Order"}}</th>
+        <th class="col-actions">{{localize "CCC.Encounter.Col.Actions"}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each rows}}
+        <tr data-key="{{this.key}}" data-uuid="{{this.actorUuid}}">
+          <td class="col-idx">{{this.idx}}</td>
+          <td class="col-portrait">
+            <img src="{{this.actorImg}}" alt="{{this.name}}" class="ccc-encounter-portrait" />
+          </td>
+          <td class="col-name">{{{this.linkHtml}}}</td>
+          <td class="col-order">
+            <span class="order-count {{#if this.atMax}}at-max{{/if}}">{{this.count}}/4</span>
+          </td>
+          <td class="col-actions">
+            <button type="button" data-action="manualRoll" title="{{localize 'CCC.Encounter.ManualRoll'}}"><i class="fas fa-play"></i></button>
+            <button type="button" data-action="reset" title="{{localize 'CCC.Encounter.Reset'}}"><i class="fas fa-rotate-left"></i></button>
+            <button type="button" data-action="openActor" title="{{localize 'CCC.Encounter.OpenActor'}}"><i class="fas fa-user"></i></button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

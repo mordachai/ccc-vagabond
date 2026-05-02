@@ -65,5 +65,17 @@
   "CCC.Vampiric.Audit.Close": "Close",
 
   "CCC.Vampiric.FinalVerdict": "Curse Outcome",
-  "CCC.Vampiric.SoulSaveAttempted": "A soul save was attempted. The result is hidden until the final reckoning."
+  "CCC.Vampiric.SoulSaveAttempted": "A soul save was attempted. The result is hidden until the final reckoning.",
+
+  "CCC.Encounter.PanelTitle": "Scaling Encounters",
+  "CCC.Encounter.RollBtn": "Roll Random Encounter (1d6)",
+  "CCC.Encounter.ResetAll": "Reset All",
+  "CCC.Encounter.ResetAllConfirm": "Reset every encounter counter back to zero?",
+  "CCC.Encounter.Reset": "Reset this encounter",
+  "CCC.Encounter.ManualRoll": "Manually advance this encounter",
+  "CCC.Encounter.OpenActor": "Open NPC sheet",
+  "CCC.Encounter.Outcome": "Outcome",
+  "CCC.Encounter.Col.NPC": "Encounter",
+  "CCC.Encounter.Col.Order": "Order",
+  "CCC.Encounter.Col.Actions": "Actions"
 }
