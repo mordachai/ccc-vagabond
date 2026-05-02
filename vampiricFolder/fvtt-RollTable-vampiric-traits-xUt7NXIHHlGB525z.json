@@ -1,0 +1,176 @@
+{
+  "name": "Vampiric Traits",
+  "img": "icons/magic/death/mouth-bite-fangs-vampire.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "_id": "sdFp8Ml8jEQKRPJ8",
+      "name": "Claws",
+      "img": "icons/creatures/claws/claw-talons-glowing-orange.webp",
+      "description": "<p>Retractable Claws. 1d6 Slashing @UUID[Item.YgikESYZoFtJCl4d]{Claws}</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "_id": "Sta9gLUBycNrLSIh",
+      "name": "Charm",
+      "img": "icons/magic/life/heart-shadow-red.webp",
+      "description": "<p><strong>Charm</strong> a creature you can see. Roll <strong>Will</strong>. Roll again in the next turn to <strong>Command</strong> charmed creature to do one unharmful action. @UUID[Item.fOZocDyt2VAMWG5L]{Charm}</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "_id": "fP1ZLgcd4iTr1q9W",
+      "name": "Ultrasonic Scream",
+      "img": "icons/magic/sonic/scream-wail-shout-teal.webp",
+      "description": "<p><span class=\"fontstyle0\">Ultrasonic scream (2d6 Physical). Roll Performance. Makes <strong>noise</strong>, can’t harm other vampires</span>. @UUID[Item.2B4CzhIa7kO1hitn]{Ultrasonic Scream}<br style=\"font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;orphans:2;text-align:-webkit-auto;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;-webkit-text-size-adjust:auto;-webkit-text-stroke-width:0px\" /></p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "_id": "REZTeT96r9WuiySF",
+      "name": "Spider Walk",
+      "img": "icons/creatures/invertebrates/spider-pink-purple.webp",
+      "description": "<p>Climb on the walls and ceiling as Spiderclimb @UUID[Item.7MyMaA5cmHhXadBX]{Spider Walk}</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "_id": "gc59ObDj3qxl4bpC",
+      "name": "Bat",
+      "img": "icons/creatures/mammals/bat-movement-flying-purple.webp",
+      "description": "<p><span class=\"fontstyle0\">Turn into a bat with 1 HP (once per area)</span> @UUID[Item.5B4hGSmbwQ7H9oK2]{Bat}<br style=\"font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;orphans:2;text-align:-webkit-auto;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;-webkit-text-size-adjust:auto;-webkit-text-stroke-width:0px\" /></p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "_id": "4rc7W1vZ7HJxAyzq",
+      "name": "Blood Power",
+      "img": "icons/skills/wounds/blood-cells-vessel-red.webp",
+      "description": "<p><span class=\"fontstyle0\">Give yourself [[/r d4]] damage to give yourself Favor on the next Check </span>@UUID[Item.MEBa9W00fAH2ZdJP]{Blood Power}</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": null
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "RollTable.xUt7NXIHHlGB525z",
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "vagabond",
+      "uuid": "RollTable.xUt7NXIHHlGB525z",
+      "coreVersion": "13.351",
+      "systemId": "vagabond",
+      "systemVersion": "5.2.2"
+    },
+    "coreVersion": "13.351",
+    "systemId": "vagabond",
+    "systemVersion": "5.2.2",
+    "createdTime": 1777647766722,
+    "modifiedTime": 1777654280937,
+    "lastModifiedBy": "13p65OEadZSZVLRk"
+  },
+  "formula": "1d6",
+  "ownership": {
+    "default": 0
+  }
+}

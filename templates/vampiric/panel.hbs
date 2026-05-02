@@ -1,0 +1,64 @@
+<div class="ccc-vampiric-panel-body">
+  {{#if rows.length}}
+    <div class="ccc-table-wrapper">
+      <table class="ccc-vampiric-table">
+        <thead>
+          <tr>
+            <th class="col-portrait"></th>
+            <th class="col-name">{{localize "CCC.Vampiric.Col.Char"}}</th>
+            <th class="col-num">{{localize "CCC.Vampiric.Col.Cursed"}}</th>
+            <th class="col-num">{{localize "CCC.Vampiric.Col.VHD"}}</th>
+            <th class="col-feeding">{{localize "CCC.Vampiric.Col.Feedings"}}</th>
+            <th class="col-num">{{localize "CCC.Vampiric.Col.Trinkets"}}</th>
+            <th class="col-endgame">{{localize "CCC.Vampiric.Col.EndGame"}}</th>
+            <th class="col-actions">{{localize "CCC.Vampiric.Col.Actions"}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each rows}}
+            <tr class="ccc-vampiric-row{{#if this.endgame.forfeit}} forfeit{{/if}}" data-actor-id="{{this.id}}">
+              <td class="col-portrait">
+                <img src="{{this.img}}" class="ccc-vampiric-portrait" alt="{{this.name}}" />
+              </td>
+              <td class="col-name">{{this.name}}</td>
+              <td class="col-num">{{this.cursedCount}}</td>
+              <td class="col-num">{{this.vhd}}</td>
+              <td class="col-feeding">
+                <div class="feeding-controls">
+                  <button type="button" data-action="feedMinus" title="-1">−</button>
+                  <span class="val">{{this.feedings}}</span>
+                  <button type="button" data-action="feedPlus" title="+1">+</button>
+                </div>
+              </td>
+              <td class="col-num">{{this.trinkets}}</td>
+              <td class="col-endgame">
+                {{#if this.endgame}}
+                  <div class="result {{#if this.endgame.forfeit}}forfeit{{else}}safe{{/if}}">
+                    <div class="stats">PC: <strong>{{this.endgame.pcRoll}}</strong> vs VHD: <strong>{{this.endgame.vhd}}</strong></div>
+                    <div class="formula">{{this.endgame.formula}}</div>
+                    <div class="verdict">
+                       {{#if this.endgame.forfeit}}{{localize "CCC.Vampiric.SoulForfeit"}}{{else}}{{localize "CCC.Vampiric.SoulSaved"}}{{/if}}
+                    </div>
+                  </div>
+                {{else}}
+                  <span class="muted">—</span>
+                {{/if}}
+              </td>
+              <td class="col-actions">
+                <div class="actions-controls">
+                  <button type="button" data-action="curse" title="{{localize 'CCC.Vampiric.Btn.PostCard'}}"><i class="fas fa-comment"></i></button>
+                  <button type="button" data-action="curseDirect" title="{{localize 'CCC.Vampiric.Btn.CurseNow'}}"><i class="fas fa-tint"></i></button>
+                  <button type="button" data-action="endgame" title="{{localize 'CCC.Vampiric.Btn.EndGame'}}" {{#unless this.endgameAvailable}}disabled{{/unless}}><i class="fas fa-skull"></i></button>
+                  <button type="button" data-action="audit" title="{{localize 'CCC.Vampiric.Btn.Audit'}}"><i class="fas fa-scroll"></i></button>
+                  <button type="button" data-action="cure" title="{{localize 'CCC.Vampiric.Btn.Cure'}}"><i class="fas fa-cross"></i></button>
+                </div>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  {{else}}
+    <p class="muted">{{localize "CCC.Vampiric.NoPlayers"}}</p>
+  {{/if}}
+</div>

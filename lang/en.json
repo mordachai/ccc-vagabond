@@ -2,5 +2,26 @@
   "CCC.Settings.UseStressLevel.Name": "Use Stress Level",
   "CCC.Settings.UseStressLevel.Hint": "Enable the Stress Level tracker overlay. Increases difficulty of all d20 rolls by the current stress value.",
   "CCC.Settings.GlobalStressLevel.Name": "Global Stress Level",
-  "CCC.UI.StressLevel": "Stress Level"
+  "CCC.UI.StressLevel": "Stress Level",
+
+  "CCC.Vampiric.PanelTitle": "Vampiric Curse Panel",
+  "CCC.Vampiric.NoPlayers": "No player characters found.",
+  "CCC.Vampiric.CardPrompt": "The curse calls. Roll your fate.",
+  "CCC.Vampiric.RollButton": "Roll Vampiric Curse",
+  "CCC.Vampiric.SoulForfeit": "Soul Forfeit",
+  "CCC.Vampiric.SoulSaved": "Soul Saved",
+
+  "CCC.Vampiric.Col.Char": "Character",
+  "CCC.Vampiric.Col.Cursed": "Cursed",
+  "CCC.Vampiric.Col.VHD": "VHD",
+  "CCC.Vampiric.Col.Feedings": "Feedings",
+  "CCC.Vampiric.Col.Trinkets": "Trinkets",
+  "CCC.Vampiric.Col.EndGame": "End-Game",
+  "CCC.Vampiric.Col.Actions": "Actions",
+
+  "CCC.Vampiric.Btn.PostCard": "Post Curse Card to Chat",
+  "CCC.Vampiric.Btn.CurseNow": "Curse Now (no chat prompt)",
+  "CCC.Vampiric.Btn.EndGame": "Roll End-Game Contest",
+  "CCC.Vampiric.Btn.Audit": "View History",
+  "CCC.Vampiric.Btn.Cure": "Cure Vampirism"
 }

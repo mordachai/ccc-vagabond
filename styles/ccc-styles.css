@@ -240,103 +240,143 @@
   pointer-events: all;
 }
 
-/* ── Dark-mode override (Foundry dark theme) ─────────────────── */
+/* ── Container & Layout ────────────────────────────── */
+.ccc-vampiric-panel .window-content {
+  background: #1a0e08;
+  color: #e8d8c0;
+  padding: 0;
+}
+
+.ccc-vampiric-panel-body {
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+  padding: 8px;
+}
+
+.ccc-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.ccc-vampiric-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+/* ── Portrait Fix ──────────────────────────────────── */
+.ccc-vampiric-table td.col-portrait {
+  width: 56px;
+  padding: 4px;
+  display: flex;             /* Use flex to center */
+  justify-content: center;   /* Horizontal center */
+  align-items: center;       /* Vertical center */
+  border-bottom: 1px solid #3a1f10;
+}
+
+.ccc-vampiric-portrait {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  border: 1px solid #6a1010;
+  object-fit: cover;
+  background: #000;
+}
+
+/* ── Table Columns & Cells ─────────────────────────── */
+.ccc-vampiric-table thead tr {
+  background: #5a0000;
+  color: #f5ede0;
+  font-variant: small-caps;
+}
+
+.ccc-vampiric-table th, 
+.ccc-vampiric-table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid #3a1f10;
+  vertical-align: middle;
+}
+
+.ccc-vampiric-table .col-name { font-weight: 700; color: #dd7755; min-width: 100px; }
+.ccc-vampiric-table .col-num { width: 45px; text-align: center; }
+.ccc-vampiric-table .col-feeding { width: 90px; text-align: center; }
+.ccc-vampiric-table .col-endgame { min-width: 160px; }
+.ccc-vampiric-table .col-actions { text-align: right; width: 1%; white-space: nowrap; }
+
+/* Row variations */
+.ccc-vampiric-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.2); }
+.ccc-vampiric-table tr.forfeit { background: rgba(139, 0, 0, 0.2) !important; }
+
+/* ── UI Components ────────────────────────────────── */
+.feeding-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.feeding-controls .val { font-weight: bold; min-width: 15px; }
+
+.actions-controls {
+  display: flex;
+  gap: 3px;
+  justify-content: flex-end;
+}
+
+.ccc-vampiric-table button {
+  width: 26px;
+  height: 26px;
+  background: #2a1a0e;
+  color: #dd7755;
+  border: 1px solid #6a1010;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ccc-vampiric-table button:hover:not(:disabled) {
+  background: #5a0000;
+  color: #fff;
+}
+
+/* ── Chat Card Styles (Preserved) ─────────────────── */
+.ccc-vampiric-card {
+  border: 1px solid #6a1010;
+  border-radius: 5px;
+  padding: 8px;
+  background: linear-gradient(135deg, #1a0e08 0%, #2a0a0a 100%);
+  color: #e8d8c0;
+}
+
+.ccc-vampiric-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.ccc-vampiric-header img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #8b0000;
+  object-fit: cover;
+}
+
+.ccc-vampiric-btn {
+  width: 100%;
+  padding: 8px;
+  background: #5a0000;
+  color: #f5ede0;
+  border: 1px solid #8b0000;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ── Dark Mode Overrides ─────────────────────────── */
 @media (prefers-color-scheme: dark) {
-  .ccc-adventure {
-    color: #e8d8c0;
-    background: #1a0e08;
-  }
-
-  .ccc-adventure h2 {
-    color: #cc4444;
-    border-bottom-color: #882222;
-  }
-
-  .ccc-adventure h3 {
-    color: #dd6644;
-    border-left-color: #882222;
-  }
-
-  .ccc-adventure h2 + p {
-    color: #c8b090;
-  }
-
-  .ccc-adventure p.feature {
-    background: rgba(200, 50, 50, 0.1);
-    border-left-color: #cc4444;
-  }
-
-  .ccc-adventure p.sub {
-    color: #c0b0a0;
-  }
-
-  .ccc-adventure p.sub::before {
-    color: #cc4444;
-  }
-
-  .ccc-adventure p.statblock {
-    background: #2a1a0a;
-    border-color: #6a4030;
-    color: #e8d8c0;
-  }
-
-  .ccc-adventure strong {
-    color: #dd7755;
-  }
-
-  .ccc-adventure table.roll-table thead tr {
-    background: #6a1010;
-    color: #f0e0cc;
-  }
-
-  .ccc-adventure table.roll-table td {
-    border-bottom-color: #4a3020;
-    color: #e0d0b8;
-  }
-
-  .ccc-adventure table.roll-table tr:nth-child(even) td {
-    background: #2a1a0e;
-  }
-
-  .ccc-adventure table.roll-table tr:hover td {
-    background: #3a2010;
-  }
-
-  .ccc-adventure table.roll-table td:first-child {
-    color: #cc4444;
-  }
-
-  .ccc-adventure hr {
-    border-top-color: #6a4030;
-  }
-
-  .ccc-adventure a.content-link {
-    color: #dd6644;
-    border-color: #884433;
-    background: rgba(200, 80, 40, 0.08);
-  }
-
-  .ccc-adventure a.content-link i {
-    color: #cc5533;
-  }
-
-  .ccc-adventure a.content-link:hover {
-    color: #ff8866;
-    border-color: #ff8866;
-    background: rgba(200, 80, 40, 0.18);
-  }
-
-  .ccc-adventure a.content-link:hover i {
-    color: #ff8866;
-  }
-
-  .ccc-adventure a.content-link.broken {
-    color: #666;
-    border-color: #555;
-    background: rgba(255,255,255,0.03);
-  }
-
-  .ccc-adventure a.content-link.broken i {
-    color: #666;
-  }
+  .ccc-adventure { color: #e8d8c0; background: #1a0e08; }
+  .ccc-adventure strong { color: #dd7755; }
 }

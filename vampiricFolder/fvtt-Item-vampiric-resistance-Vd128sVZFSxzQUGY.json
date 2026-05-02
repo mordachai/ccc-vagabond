@@ -1,0 +1,95 @@
+{
+  "folder": "FGTpAVYqablI8lCj",
+  "name": "Vampiric Resistance",
+  "type": "perk",
+  "img": "icons/creatures/magical/humanoid-silhouette-glowing-pink.webp",
+  "system": {
+    "description": "<p>Extra 1D8 Health Points</p>",
+    "prerequisites": {
+      "stats": [],
+      "statOrGroups": [],
+      "trainedSkills": [],
+      "trainedSkillOrGroups": [],
+      "spells": [],
+      "spellOrGroups": [],
+      "hasAnySpell": false,
+      "resources": [],
+      "resourceOrGroups": []
+    },
+    "choiceConfig": {
+      "type": "none",
+      "selected": "",
+      "targetField": "",
+      "effectMode": 5,
+      "effectValue": "1"
+    }
+  },
+  "effects": [
+    {
+      "name": "Active Effect",
+      "origin": "Item.Vd128sVZFSxzQUGY",
+      "img": "icons/svg/aura.svg",
+      "_id": "76iZEFlSrcnlL7u7",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.health.bonus",
+          "mode": 2,
+          "value": "0",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "combat": null,
+        "seconds": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "vagabond": {
+          "applicationMode": "permanent"
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      }
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Item.Vd128sVZFSxzQUGY",
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "vagabond",
+      "uuid": "Item.Vd128sVZFSxzQUGY",
+      "coreVersion": "13.351",
+      "systemId": "vagabond",
+      "systemVersion": "5.2.2"
+    },
+    "coreVersion": "13.351",
+    "systemId": "vagabond",
+    "systemVersion": "5.2.2",
+    "createdTime": 1777647766646,
+    "modifiedTime": 1777676364060,
+    "lastModifiedBy": "13p65OEadZSZVLRk"
+  },
+  "ownership": {
+    "default": 0
+  }
+}

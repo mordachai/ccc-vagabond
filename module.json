@@ -21,6 +21,9 @@
   "styles": [
         "styles/ccc-styles.css"
   ],
+  "esmodules": [
+        "scripts/vampiric/index.js"
+  ],
   "scripts": [
         "scripts/stress-tracker.js"
   ],

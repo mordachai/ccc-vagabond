@@ -1,0 +1,176 @@
+{
+  "name": "Vampiric Weaknesses",
+  "img": "icons/magic/unholy/strike-body-life-soul-purple.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "_id": "9IY6WdDNd5OhQJPs",
+      "name": "Vulnerable to Fire ☠️",
+      "img": "icons/magic/fire/flame-burning-creature-skeleton.webp",
+      "description": "<p>Vulnerable to fire &amp; radiant damage</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": "Item.38xWQrw8rt92SioS"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "_id": "TwVDPj1sBAwLo2hO",
+      "name": "☠️ Sunlight",
+      "img": "icons/magic/light/explosion-star-glow-orange.webp",
+      "description": "<p>Hindered in all d20 rolls while in the presence of sunlight (Mother’s Icon &amp; Sun Sword)</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": "Item.tzpTjZ6wJwfHjRaS"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "_id": "2XJRy9cvAE29A9iu",
+      "name": "☠️ Shadow",
+      "img": "icons/magic/control/silhouette-hold-change-green.webp",
+      "description": "<p>Your <strong>Shadow</strong> (5 HP) looks like the monster you may become. Joins in on any combat, attacking only you. If defeated, will reappear at Midnight or if any more blood is consumed</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": "Item.6UveVONNOgsxNqIG"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "_id": "50LCaL5Q851syDou",
+      "name": "☠️ Binded",
+      "img": "icons/magic/control/energy-stream-link-large-blue.webp",
+      "description": "<p>Cannot directly harm a creature until they harm you first</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": "Item.sHCRqlJyAF2ym7vQ"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "_id": "lmGjilnx2cnFkEWH",
+      "name": "☠️ Death Visage",
+      "img": "icons/magic/death/skull-energy-light-purple.webp",
+      "description": "<p>Pale flesh, red eyes, &amp; angled features cause innocent people to believe you’re a monster</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": "Item.fAClnJ3bespwoXCW"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "_id": "mPqkmqJgWZcWpDxX",
+      "name": "☠️ Loyal to the Master",
+      "img": "icons/creatures/magical/spirit-fear-energy-pink.webp",
+      "description": "<p>Your vampiric traits are suppressed when in the presence of actual vampires (the Count &amp; his Brides)</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "vagabond",
+        "systemVersion": "5.2.2",
+        "lastModifiedBy": null
+      },
+      "documentUuid": "Item.w5VdL9o08qIlz8Tk"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "RollTable.pWJuz5dFNRRimHrW",
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "vagabond",
+      "uuid": "RollTable.pWJuz5dFNRRimHrW",
+      "coreVersion": "13.351",
+      "systemId": "vagabond",
+      "systemVersion": "5.2.2"
+    },
+    "coreVersion": "13.351",
+    "systemId": "vagabond",
+    "systemVersion": "5.2.2",
+    "createdTime": 1777647766722,
+    "modifiedTime": 1777647766722,
+    "lastModifiedBy": "13p65OEadZSZVLRk"
+  },
+  "formula": "1d6",
+  "ownership": {
+    "default": 0
+  }
+}
