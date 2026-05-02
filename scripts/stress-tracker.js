@@ -107,5 +107,4 @@ function highlightStressedDifficulty(msg, html) {
   const el = html?.[0] ?? html;
   el?.querySelector?.(".roll-target")?.classList.add("ccc-stressed-difficulty");
 }
-Hooks.on("renderChatMessage", highlightStressedDifficulty);
 Hooks.on("renderChatMessageHTML", highlightStressedDifficulty);

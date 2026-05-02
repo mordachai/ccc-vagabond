@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('c:/Users/Gus/Documents/FoundryVTT-WindowsPortable-13.346/Data/modules/ccc-vagabond/lang/en.json','utf8'\\)\\); console.log\\('ok'\\)\")"
+    ]
+  }
+}

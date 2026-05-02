@@ -160,7 +160,6 @@ function onSocket(payload) {
 }
 
 export function registerChatCardHooks() {
-  Hooks.on("renderChatMessage", bindButton);
   Hooks.on("renderChatMessageHTML", bindButton);
   game.socket.on(SOCKET_NAME, onSocket);
 }
