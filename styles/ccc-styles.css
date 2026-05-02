@@ -117,10 +117,10 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: #8b0000;
+  color: #ff8d8d;
   font-weight: 600;
   text-decoration: none;
-  border: 1px solid #c8707070;
+  border: 1px solid #c87070b9;
   border-radius: 4px;
   padding: 1px 5px 1px 5px;
   background: rgba(139, 0, 0, 0.04);
@@ -264,13 +264,13 @@
 }
 
 /* ── Portrait Fix ──────────────────────────────────── */
+.ccc-vampiric-table th.col-portrait,
 .ccc-vampiric-table td.col-portrait {
   width: 56px;
+  min-width: 56px;
   padding: 4px;
-  display: flex;             /* Use flex to center */
-  justify-content: center;   /* Horizontal center */
-  align-items: center;       /* Vertical center */
-  border-bottom: 1px solid #3a1f10;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .ccc-vampiric-portrait {

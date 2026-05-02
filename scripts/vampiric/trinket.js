@@ -1,4 +1,4 @@
-import { MODULE_ID, TRINKET_ITEM_NAME, getTrinketDie, getVampiricFlags, setVampiricFlags } from "./data.js";
+import { MODULE_ID, TRINKET_ITEM_NAME, getTrinketDie, dieIconClass, getVampiricFlags, setVampiricFlags } from "./data.js";
 
 const TRINKET_ITEM_ID = "oW2PZPS5fisprdHt";
 const FLAG_KEY = "curseRequest";
@@ -63,7 +63,7 @@ export async function applyTrinket(actor) {
               <span class="stat-value">+${hpRoll.total} HP</span>
             </div>
             <div class="stat-row">
-              <span class="stat-label"><i class="fas fa-dice-d6"></i> ${lblBonus} (${dieFormula})</span>
+              <span class="stat-label"><i class="${dieIconClass(dieFormula)}"></i> ${lblBonus} (${dieFormula})</span>
               <span class="stat-value">+${hpRoll.total}</span>
             </div>
           </div>
@@ -85,6 +85,7 @@ export async function postTrinketRequest(actor) {
   const title = game.i18n.localize("CCC.Vampiric.TrinketCardTitle");
   const prompt = game.i18n.localize("CCC.Vampiric.TrinketCardPrompt");
   const rollLabel = game.i18n.localize("CCC.Vampiric.TrinketRollButton");
+  const dieIcon = dieIconClass(getTrinketDie());
   const content = `
     <div class="vagabond-chat-card-v2 ccc-vampiric-card" data-card-type="vampiric-trinket-request" data-actor-id="${actor.id}">
       <h3 class="actor-name-header">${actor.name}</h3>
@@ -103,7 +104,7 @@ export async function postTrinketRequest(actor) {
         </div>
         <div class="card-actions">
           <button type="button" class="ccc-vampiric-btn" data-action="rollTrinket">
-            <i class="fas fa-dice-d6"></i> ${rollLabel}
+            <i class="${dieIcon}"></i> ${rollLabel}
           </button>
         </div>
       </div>

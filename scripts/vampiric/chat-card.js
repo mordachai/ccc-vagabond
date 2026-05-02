@@ -1,4 +1,4 @@
-import { MODULE_ID } from "./data.js";
+import { MODULE_ID, getResistanceDie, dieIconClass } from "./data.js";
 import { applyVampiricCurse } from "./curse.js";
 import { performEndgameContest } from "./endgame.js";
 import { applyTrinket } from "./trinket.js";
@@ -29,6 +29,7 @@ export async function postCurseRequest(actor) {
   const title = game.i18n.localize("CCC.Vampiric.CardTitle");
   const prompt = game.i18n.localize("CCC.Vampiric.CardPrompt");
   const rollLabel = game.i18n.localize("CCC.Vampiric.RollButton");
+  const dieIcon = dieIconClass(getResistanceDie());
   const content = `
     <div class="vagabond-chat-card-v2 ccc-vampiric-card" data-card-type="vampiric-curse-request" data-actor-id="${actor.id}">
       <h3 class="actor-name-header">${actor.name}</h3>
@@ -47,7 +48,7 @@ export async function postCurseRequest(actor) {
         </div>
         <div class="card-actions">
           <button type="button" class="ccc-vampiric-btn" data-action="rollCurse">
-            <i class="fas fa-dice-d20"></i> ${rollLabel}
+            <i class="${dieIcon}"></i> ${rollLabel}
           </button>
         </div>
       </div>

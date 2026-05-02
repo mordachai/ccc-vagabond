@@ -19,6 +19,14 @@ export function getTrinketDie() {
   return game.settings.get(MODULE_ID, SETTING_TRINKET_DIE) || "1d6";
 }
 
+export function dieIconClass(formula) {
+  const m = String(formula).match(/d(\d+)/i);
+  const faces = m ? Number(m[1]) : 6;
+  const valid = [4, 6, 8, 10, 12, 20];
+  const f = valid.includes(faces) ? faces : 6;
+  return `fas fa-dice-d${f}`;
+}
+
 export const STAT_PATHS = {
   reasonTotal: "system.stats.reason.total",
   reasonValue: "system.stats.reason.value",

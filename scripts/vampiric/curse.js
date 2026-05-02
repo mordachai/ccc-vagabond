@@ -3,6 +3,7 @@ import {
   WEAKNESSES_TABLE_NAME,
   RESISTANCE_ITEM_NAME,
   getResistanceDie,
+  dieIconClass,
   getVampiricFlags,
   setVampiricFlags
 } from "./data.js";
@@ -130,7 +131,7 @@ export async function applyVampiricCurse(actor) {
               <span class="stat-value">${weakness?.name ?? "—"}</span>
             </div>
             <div class="stat-row">
-              <span class="stat-label"><i class="fas fa-dice-d8"></i> ${lblVHD} (${dieFormula})</span>
+              <span class="stat-label"><i class="${dieIconClass(dieFormula)}"></i> ${lblVHD} (${dieFormula})</span>
               <span class="stat-value">+${hpRoll.total} HP</span>
             </div>
           </div>
