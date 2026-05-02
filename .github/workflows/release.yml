@@ -59,6 +59,7 @@ jobs:
           cp -r assets ccc-vagabond/
           cp -r packs ccc-vagabond/
           cp -r lang ccc-vagabond/
+          cp -r templates ccc-vagabond/
 
           cd ccc-vagabond
           zip -r ../module.zip .

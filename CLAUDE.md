@@ -43,4 +43,4 @@ Source of truth for version, dependencies, and file registration. Register new C
 
 ## Releases
 
-GitHub Actions workflow at `.github/workflows/release.yml` auto-releases when `module.json` version increases on push to `main`. Packages `styles/`, `assets/`, `packs/`, `scripts/` into `module.zip`.
+GitHub Actions workflow at `.github/workflows/release.yml` auto-releases when `module.json` version increases on push to `main`. Packages `styles/`, `assets/`, `packs/`, `scripts/`, `lang/`, `templates/` into `module.zip`.
