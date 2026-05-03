@@ -1,7 +1,7 @@
 {
   "id": "ccc-vagabond",
   "title": "Count the Castle and the Curse for Vagabond",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "compatibility": {
     "minimum": "13",
     "verified": "13"
@@ -18,16 +18,9 @@
       "flags": {}
     }
   ],
-  "styles": [
-        "styles/ccc-styles.css"
-  ],
-  "esmodules": [
-        "scripts/vampiric/index.js",
-        "scripts/encounters.js"
-  ],
-  "scripts": [
-        "scripts/stress-tracker.js"
-  ],
+  "styles": ["styles/ccc-styles.css"],
+  "esmodules": ["scripts/vampiric/index.js", "scripts/encounters.js"],
+  "scripts": ["scripts/stress-tracker.js"],
   "languages": [
     {
       "lang": "en",
@@ -35,6 +28,7 @@
       "path": "lang/en.json"
     }
   ],
+  "socket": true,
   "flags": {
     "canUpload": true
   },
@@ -43,9 +37,7 @@
       "name": "The Count, The Castle & The Curse",
       "sorting": "m",
       "color": "#8f0505",
-      "packs": [
-        "adventure"
-      ],
+      "packs": ["adventure"],
       "folders": []
     }
   ],

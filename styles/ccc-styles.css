@@ -124,7 +124,10 @@
   border-radius: 4px;
   padding: 1px 5px 1px 5px;
   background: rgba(139, 0, 0, 0.04);
-  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    background 0.15s,
+    border-color 0.15s;
 }
 
 .ccc-adventure a.content-link:hover {
@@ -149,7 +152,7 @@
 .ccc-adventure a.content-link.broken {
   color: #888;
   border-color: #bbb;
-  background: rgba(0,0,0,0.03);
+  background: rgba(0, 0, 0, 0.03);
   font-style: italic;
 }
 
@@ -225,7 +228,7 @@
   padding: 5px 10px;
   background: rgba(0, 0, 0, 0.7);
   color: black;
-  font-family: "Germania", serif;
+  font-family: 'Germania', serif;
   font-size: 1.6em;
   font-weight: normal;
   border: 1px solid #444;
@@ -290,16 +293,27 @@
   font-variant: small-caps;
 }
 
-.ccc-vampiric-table th, 
+.ccc-vampiric-table th,
 .ccc-vampiric-table td {
   padding: 8px 6px;
   border-bottom: 1px solid #3a1f10;
   vertical-align: middle;
 }
 
-.ccc-vampiric-table .col-name { font-weight: 700; color: #dd7755; min-width: 100px; }
-.ccc-vampiric-table .col-num { width: 45px; text-align: center; }
-.ccc-vampiric-table .col-actions { text-align: center; width: 1%; white-space: nowrap; }
+.ccc-vampiric-table .col-name {
+  font-weight: 700;
+  color: #dd7755;
+  min-width: 100px;
+}
+.ccc-vampiric-table .col-num {
+  width: 45px;
+  text-align: center;
+}
+.ccc-vampiric-table .col-actions {
+  text-align: center;
+  width: 1%;
+  white-space: nowrap;
+}
 
 .ccc-vampiric-table .col-trinkets {
   width: 70px;
@@ -317,8 +331,12 @@
 }
 
 /* Row variations */
-.ccc-vampiric-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.2); }
-.ccc-vampiric-table tr.forfeit { background: rgba(139, 0, 0, 0.2) !important; }
+.ccc-vampiric-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.2);
+}
+.ccc-vampiric-table tr.forfeit {
+  background: rgba(139, 0, 0, 0.2) !important;
+}
 
 /* ── UI Components ────────────────────────────────── */
 .actions-controls {
@@ -348,9 +366,10 @@
 /* ── Chat Card (Vagabond v2 system style) ─────────── */
 /* Inline icon for trait/weakness rows */
 .vagabond-chat-card-v2 .ccc-vampiric-inline-icon {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   vertical-align: middle;
+  align-items: center;
   border-radius: 3px;
   border: 1px solid var(--c-dark-blue, #0b1a23);
   object-fit: cover;
@@ -370,7 +389,7 @@
 .vagabond-chat-card-v2 .card-actions button.ccc-vampiric-btn {
   width: 100%;
   background: transparent;
-  background-image: url("/systems/vagabond/assets/ui/chat/apply-direct-bg.webp");
+  background-image: url('/systems/vagabond/assets/ui/chat/apply-direct-bg.webp');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -379,7 +398,7 @@
   margin-bottom: 6px;
   text-transform: uppercase;
   font-weight: bold;
-  font-family: "Eskapade", serif;
+  font-family: 'Eskapade', serif;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -393,7 +412,9 @@
   line-height: 1.2;
 }
 
-.vagabond-chat-card-v2 .card-actions button.ccc-vampiric-btn:hover:not(:disabled) {
+.vagabond-chat-card-v2
+  .card-actions
+  button.ccc-vampiric-btn:hover:not(:disabled) {
   filter: brightness(1.6);
 }
 
@@ -405,22 +426,22 @@
 }
 
 .vagabond-chat-card-v2 .card-actions button.ccc-vampiric-btn i {
-  color: #DED656;
+  color: #ded656;
   flex-shrink: 0;
 }
 
 /* Endgame chat card — system roll-strip uses external bg images.
    Provide fallbacks pointing to system assets via absolute paths. */
 .vagabond-chat-card-v2.ccc-vampiric-endgame .roll-strip {
-  background-image: url("/systems/vagabond/assets/ui/chat/roll-bg.webp");
+  background-image: url('/systems/vagabond/assets/ui/chat/roll-bg.webp');
 }
 
 .vagabond-chat-card-v2.ccc-vampiric-endgame .roll-result-banner.result-hit {
-  background-image: url("/systems/vagabond/assets/ui/chat/result-hit-bg.webp");
+  background-image: url('/systems/vagabond/assets/ui/chat/result-hit-bg.webp');
 }
 
 .vagabond-chat-card-v2.ccc-vampiric-endgame .roll-result-banner.result-miss {
-  background-image: url("/systems/vagabond/assets/ui/chat/result-miss-bg.webp");
+  background-image: url('/systems/vagabond/assets/ui/chat/result-miss-bg.webp');
 }
 
 /* Verdict in card-description (Soul Saved / Soul Forfeit) */
@@ -428,7 +449,7 @@
   margin: 4px 0;
   padding: 8px;
   text-align: center;
-  font-family: "Germania", serif;
+  font-family: 'Germania', serif;
   font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
@@ -451,7 +472,7 @@
 
 /* Neutral roll banner — used while result is hidden */
 .vagabond-chat-card-v2.ccc-vampiric-endgame .roll-result-banner.result-neutral {
-  background-image: url("/systems/vagabond/assets/ui/chat/roll-bg.webp");
+  background-image: url('/systems/vagabond/assets/ui/chat/roll-bg.webp');
   filter: grayscale(0.5) brightness(0.9);
 }
 
@@ -509,11 +530,19 @@
   gap: 3px;
 }
 
-.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .vals .part i {
+.vagabond-chat-card-v2.ccc-vampiric-endgame
+  .ccc-vampiric-roll-row
+  .vals
+  .part
+  i {
   opacity: 0.85;
 }
 
-.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .vals .part.vhd i {
+.vagabond-chat-card-v2.ccc-vampiric-endgame
+  .ccc-vampiric-roll-row
+  .vals
+  .part.vhd
+  i {
   color: #8b0000;
   font-size: small;
 }
@@ -523,12 +552,18 @@
   font-weight: 600;
 }
 
-.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .vals .total {
+.vagabond-chat-card-v2.ccc-vampiric-endgame
+  .ccc-vampiric-roll-row
+  .vals
+  .total {
   font-size: 19px;
   font-weight: 800;
 }
 
-.vagabond-chat-card-v2.ccc-vampiric-endgame .ccc-vampiric-roll-row .vals .part.vhd {
+.vagabond-chat-card-v2.ccc-vampiric-endgame
+  .ccc-vampiric-roll-row
+  .vals
+  .part.vhd {
   font-size: 19px;
   font-weight: 800;
 }
@@ -539,8 +574,8 @@
 }
 
 /* ── Verdict card override (only the final outcome card) ─────── */
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .card-body {
-  background-image: url("/modules/ccc-vagabond/assets/ui/dark-bg-300.webp");
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict'] .card-body {
+  background-image: url('/modules/ccc-vagabond/assets/ui/dark-bg-300.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -548,60 +583,81 @@
   color: #f0e0c8;
 }
 
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .actor-name-header {
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict'] .actor-name-header {
   color: #f5d088;
   text-shadow: 1px 1px 2px #000;
 }
 
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .header-info {
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict'] .header-info {
   border-bottom-color: #c8a060;
 }
 
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .header-info .header-title {
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict']
+  .header-info
+  .header-title {
   color: #ffd9a0;
   border-bottom-color: #c8a060;
   text-shadow: 1px 1px 2px #000;
 }
 
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .metadata-tags-row .meta-tag,
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .metadata-tags-row .meta-tag i,
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .metadata-tags-row .tag-separator {
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict']
+  .metadata-tags-row
+  .meta-tag,
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict']
+  .metadata-tags-row
+  .meta-tag
+  i,
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict']
+  .metadata-tags-row
+  .tag-separator {
   color: #e8d8c0;
 }
 
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .card-description {
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict'] .card-description {
   color: #f0e0c8;
 }
 
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-roll-row.safe {
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict']
+  .ccc-vampiric-roll-row.safe {
   background: rgba(60, 200, 110, 0.22);
   border-left-color: #4ad07a;
   color: #d8ffe4;
 }
 
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-roll-row.forfeit {
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict']
+  .ccc-vampiric-roll-row.forfeit {
   background: rgba(220, 40, 40, 0.28);
   border-left-color: #ff5050;
   color: #ffd8c8;
 }
 
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-roll-row .vals .part i {
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict']
+  .ccc-vampiric-roll-row
+  .vals
+  .part
+  i {
   color: inherit;
   opacity: 0.95;
 }
 
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-roll-row .vals .part.vhd i {
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict']
+  .ccc-vampiric-roll-row
+  .vals
+  .part.vhd
+  i {
   color: #ff6060;
 }
 
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-verdict.safe {
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict']
+  .ccc-vampiric-verdict.safe {
   color: #d8ffe4;
   background: rgba(60, 200, 110, 0.3);
   border-color: #4ad07a;
   text-shadow: 1px 1px 2px #000;
 }
 
-.vagabond-chat-card-v2[data-card-type="vampiric-verdict"] .ccc-vampiric-verdict.forfeit {
+.vagabond-chat-card-v2[data-card-type='vampiric-verdict']
+  .ccc-vampiric-verdict.forfeit {
   color: #ffd0c0;
   background: rgba(220, 40, 40, 0.35);
   border-color: #ff5050;
@@ -609,8 +665,12 @@
 }
 
 /* Audit dialog row colors */
-.ccc-vampiric-audit tr.safe td { background: rgba(40, 160, 80, 0.12); }
-.ccc-vampiric-audit tr.forfeit td { background: rgba(180, 20, 20, 0.18); }
+.ccc-vampiric-audit tr.safe td {
+  background: rgba(40, 160, 80, 0.12);
+}
+.ccc-vampiric-audit tr.forfeit td {
+  background: rgba(180, 20, 20, 0.18);
+}
 
 /* ── Scaling Encounters Panel ────────────────────── */
 .ccc-encounter-panel .window-content {
@@ -626,7 +686,7 @@
 }
 
 .ccc-encounter-intro {
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
   border: 1px solid #5a3030;
   border-left: 3px solid #8b0000;
   border-radius: 3px;
@@ -635,8 +695,12 @@
   line-height: 1.4;
 }
 
-.ccc-encounter-intro p { margin: 0 0 0.35rem 0; }
-.ccc-encounter-intro p:last-child { margin-bottom: 0; }
+.ccc-encounter-intro p {
+  margin: 0 0 0.35rem 0;
+}
+.ccc-encounter-intro p:last-child {
+  margin-bottom: 0;
+}
 
 .ccc-encounter-intro a.inline-roll,
 .ccc-encounter-intro a.content-link {
@@ -668,7 +732,7 @@
 }
 
 .ccc-encounter-reset-all-btn {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   color: #f4ead8;
   border: 1px solid #5a3030;
   border-radius: 3px;
@@ -702,7 +766,9 @@
   border: 1px solid #8b0000;
 }
 
-.ccc-encounter-result-meta { flex: 1; }
+.ccc-encounter-result-meta {
+  flex: 1;
+}
 
 .ccc-encounter-result-meta h3 {
   margin: 0 0 0.3rem 0;
@@ -752,15 +818,38 @@
   vertical-align: middle;
 }
 
-.ccc-encounter-table .col-idx { width: 28px; text-align: center; }
-.ccc-encounter-table .col-portrait { width: 40px; }
-.ccc-encounter-table .col-order { width: 70px; text-align: center; }
-.ccc-encounter-table .col-defeated { width: 70px; text-align: center; }
-.ccc-encounter-table .col-defeated input { cursor: pointer; transform: scale(1.2); }
-.ccc-encounter-table .col-actions { width: 1%; display: flex; white-space: nowrap; text-align: center; }
+.ccc-encounter-table .col-idx {
+  width: 28px;
+  text-align: center;
+}
+.ccc-encounter-table .col-portrait {
+  width: 40px;
+}
+.ccc-encounter-table .col-order {
+  width: 70px;
+  text-align: center;
+}
+.ccc-encounter-table .col-defeated {
+  width: 70px;
+  text-align: center;
+}
+.ccc-encounter-table .col-defeated input {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.ccc-encounter-table .col-actions {
+  width: 1%;
+  display: flex;
+  white-space: nowrap;
+  text-align: center;
+}
 
-.ccc-encounter-table tr.row-unavailable { opacity: 0.5; }
-.ccc-encounter-table tr.row-unavailable .col-name { text-decoration: line-through; }
+.ccc-encounter-table tr.row-unavailable {
+  opacity: 0.5;
+}
+.ccc-encounter-table tr.row-unavailable .col-name {
+  text-decoration: line-through;
+}
 
 .ccc-encounter-portrait {
   width: 32px;
@@ -771,7 +860,9 @@
   display: block;
 }
 
-.ccc-encounter-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.2); }
+.ccc-encounter-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.2);
+}
 
 .ccc-encounter-table .order-count {
   display: inline-block;
@@ -779,7 +870,7 @@
   padding: 0.1rem 0.35rem;
   border: 1px solid #5a3030;
   border-radius: 3px;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
   font-weight: 700;
 }
 
@@ -790,7 +881,7 @@
 }
 
 .ccc-encounter-table button {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   color: #f4ead8;
   border: 1px solid #5a3030;
   border-radius: 3px;
@@ -805,7 +896,7 @@
 }
 
 .ccc-encounter-config-btn {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   color: #f4ead8;
   border: 1px solid #5a3030;
   border-radius: 3px;
@@ -842,7 +933,7 @@
   border-radius: 4px;
   padding: 0.5rem 0.7rem 0.6rem 0.7rem;
   margin-bottom: 0.7rem;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .ccc-encounter-config-slot legend {
@@ -878,7 +969,7 @@
 
 .ccc-encounter-config .drop-row input {
   flex: 1;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   color: #f4ead8;
   border: 1px solid #5a3030;
   border-radius: 3px;
@@ -893,7 +984,7 @@
 }
 
 .ccc-encounter-config .drop-row button {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   color: #f4ead8;
   border: 1px solid #5a3030;
   border-radius: 3px;
@@ -909,7 +1000,7 @@
 .ccc-encounter-config-textarea {
   width: 100%;
   min-height: 90px;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   color: #f4ead8;
   border: 1px solid #5a3030;
   border-radius: 3px;
@@ -946,7 +1037,7 @@
   flex-wrap: nowrap;
   gap: 0.4rem;
   justify-content: flex-end;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .ccc-encounter-config .form-footer button,
@@ -958,6 +1049,11 @@
 
 /* ── Dark Mode Overrides ─────────────────────────── */
 @media (prefers-color-scheme: dark) {
-  .ccc-adventure { color: #e8d8c0; background: #1a0e08; }
-  .ccc-adventure strong { color: #dd7755; }
+  .ccc-adventure {
+    color: #e8d8c0;
+    background: #1a0e08;
+  }
+  .ccc-adventure strong {
+    color: #dd7755;
+  }
 }

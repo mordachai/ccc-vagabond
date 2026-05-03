@@ -35,6 +35,7 @@
 
   "CCC.Vampiric.Btn.PostCard": "Post Curse Card to Chat",
   "CCC.Vampiric.Btn.CurseNow": "Curse Now (no chat prompt)",
+  "CCC.Vampiric.Btn.CurseManual": "Custom Curse (choose trait, weakness & VHD)",
   "CCC.Vampiric.Btn.EndGame": "Request Soul Save Roll",
   "CCC.Vampiric.Btn.Reveal": "Reveal Final Verdict",
   "CCC.Vampiric.Btn.Audit": "View History",

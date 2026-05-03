@@ -1,11 +1,14 @@
 import {
   MODULE_ID,
+  TRAITS_TABLE_NAME,
+  WEAKNESSES_TABLE_NAME,
   TRINKET_ITEM_NAME,
   getVampiricFlags,
-  getTrinketCount
+  getTrinketCount,
+  getResistanceDie
 } from "./data.js";
 import { postCurseRequest, postEndgameRequest } from "./chat-card.js";
-import { applyVampiricCurse, cureActor } from "./curse.js";
+import { applyVampiricCurse, applyVampiricCurseManual, getAllTableItems, cureActor } from "./curse.js";
 import { revealVerdict, purgeEndgameHistory } from "./endgame.js";
 import { postTrinketRequest } from "./trinket.js";
 
@@ -25,6 +28,7 @@ export class VampiricPanel extends HandlebarsApplicationMixin(ApplicationV2) {
     actions: {
       curse: VampiricPanel._onCurse,
       curseDirect: VampiricPanel._onCurseDirect,
+      curseManual: VampiricPanel._onCurseManual,
       endgame: VampiricPanel._onEndgame,
       reveal: VampiricPanel._onReveal,
       audit: VampiricPanel._onAudit,
@@ -74,6 +78,68 @@ export class VampiricPanel extends HandlebarsApplicationMixin(ApplicationV2) {
   static async _onCurseDirect(event, target) {
     const actor = VampiricPanel._getActor(target);
     if (actor) await applyVampiricCurse(actor);
+    this.render();
+  }
+
+  static async _onCurseManual(event, target) {
+    const actor = VampiricPanel._getActor(target);
+    if (!actor) return;
+
+    const [traits, weaknesses] = await Promise.all([
+      getAllTableItems(TRAITS_TABLE_NAME),
+      getAllTableItems(WEAKNESSES_TABLE_NAME)
+    ]);
+
+    const dieFormula = getResistanceDie();
+    const vhdRoll = new Roll(dieFormula);
+    await vhdRoll.evaluate();
+
+    const traitOpts = [`<option value="">— None —</option>`,
+      ...traits.map(t => `<option value="${t.name}">${t.name}</option>`)
+    ].join("");
+    const weakOpts = [`<option value="">— None —</option>`,
+      ...weaknesses.map(w => `<option value="${w.name}">${w.name}</option>`)
+    ].join("");
+
+    const content = `
+      <form class="ccc-vampiric-manual-form standard-form">
+        <div class="form-group">
+          <label>Trait</label>
+          <div class="form-fields"><select name="traitName">${traitOpts}</select></div>
+        </div>
+        <div class="form-group">
+          <label>Weakness</label>
+          <div class="form-fields"><select name="weaknessName">${weakOpts}</select></div>
+        </div>
+        <div class="form-group">
+          <label>VHD <span class="units">(${dieFormula} = ${vhdRoll.total})</span></label>
+          <div class="form-fields"><input type="number" name="vhd" value="${vhdRoll.total}" min="1" max="99" /></div>
+        </div>
+      </form>`;
+
+    const chosen = await foundry.applications.api.DialogV2.prompt({
+      window: { title: `${actor.name} — Custom Curse` },
+      content,
+      ok: {
+        label: "Apply Curse",
+        icon: "fas fa-tint",
+        callback: (_ev, _btn, dialog) => {
+          const f = dialog.element.querySelector("form");
+          return {
+            traitName: f.querySelector("[name=traitName]").value,
+            weaknessName: f.querySelector("[name=weaknessName]").value,
+            vhd: Number(f.querySelector("[name=vhd]").value) || vhdRoll.total
+          };
+        }
+      }
+    });
+
+    if (!chosen) return;
+
+    const traitItem = chosen.traitName ? traits.find(t => t.name === chosen.traitName) ?? null : null;
+    const weakItem = chosen.weaknessName ? weaknesses.find(w => w.name === chosen.weaknessName) ?? null : null;
+
+    await applyVampiricCurseManual(actor, traitItem, weakItem, chosen.vhd);
     this.render();
   }
 

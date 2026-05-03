@@ -58,48 +58,8 @@ async function applyResistance(actor, hpRoll) {
   }
 }
 
-export async function applyVampiricCurse(actor) {
-  const traitsTable = game.tables.find(t => t.name === TRAITS_TABLE_NAME);
-  const weaknessesTable = game.tables.find(t => t.name === WEAKNESSES_TABLE_NAME);
-  if (!traitsTable || !weaknessesTable) {
-    ui.notifications?.error("Vampiric tables not found");
-    return null;
-  }
-
-  const trait = await drawUniqueItem(actor, traitsTable);
-  const weakness = await drawUniqueItem(actor, weaknessesTable);
-
+async function _postCurseCard(actor, trait, weakness, hpValue, rollObj = null) {
   const dieFormula = getResistanceDie();
-  const hpRoll = new Roll(dieFormula);
-  await hpRoll.evaluate();
-
-  const toCreate = [];
-  if (trait) {
-    const td = trait.toObject();
-    delete td._id;
-    toCreate.push(td);
-  }
-  if (weakness) {
-    const wd = weakness.toObject();
-    delete wd._id;
-    toCreate.push(wd);
-  }
-  if (toCreate.length) await actor.createEmbeddedDocuments("Item", toCreate);
-
-  await applyResistance(actor, hpRoll.total);
-
-  const flags = getVampiricFlags(actor);
-  await setVampiricFlags(actor, {
-    cursedCount: flags.cursedCount + 1,
-    hitDicePoints: flags.hitDicePoints + hpRoll.total,
-    history: [...flags.history, {
-      ts: Date.now(),
-      trait: trait?.name ?? null,
-      weakness: weakness?.name ?? null,
-      hpRoll: hpRoll.total
-    }]
-  });
-
   const traitImg = trait?.img ?? "icons/svg/mystery-man.svg";
   const weakImg = weakness?.img ?? "icons/svg/mystery-man.svg";
   const portrait = actor.img ?? "icons/svg/mystery-man.svg";
@@ -116,7 +76,7 @@ export async function applyVampiricCurse(actor) {
           <div class="header-info">
             <h2 class="header-title">${title}</h2>
             <div class="metadata-tags-row">
-              <span class="meta-tag"><i class="fas fa-skull"></i> +${hpRoll.total} VHD</span>
+              <span class="meta-tag"><i class="fas fa-skull"></i> +${hpValue} VHD</span>
             </div>
           </div>
         </div>
@@ -132,20 +92,92 @@ export async function applyVampiricCurse(actor) {
             </div>
             <div class="stat-row">
               <span class="stat-label"><i class="${dieIconClass(dieFormula)}"></i> ${lblVHD} (${dieFormula})</span>
-              <span class="stat-value">+${hpRoll.total} HP</span>
+              <span class="stat-value">+${hpValue} HP</span>
             </div>
           </div>
         </div>
       </div>
     </div>`;
-  await ChatMessage.create({
-    speaker: { alias: actor.name },
-    content,
-    rolls: [hpRoll],
-    sound: CONFIG.sounds.dice
+  const msgData = { speaker: { alias: actor.name }, content, sound: CONFIG.sounds.dice };
+  if (rollObj) msgData.rolls = [rollObj];
+  await ChatMessage.create(msgData);
+}
+
+export async function getAllTableItems(tableName) {
+  const table = game.tables.find(t => t.name === tableName);
+  if (!table) return [];
+  const items = [];
+  for (const result of table.results) {
+    const item = await getItemFromResult(result);
+    if (item) items.push(item);
+  }
+  return items;
+}
+
+export async function applyVampiricCurse(actor) {
+  const traitsTable = game.tables.find(t => t.name === TRAITS_TABLE_NAME);
+  const weaknessesTable = game.tables.find(t => t.name === WEAKNESSES_TABLE_NAME);
+  if (!traitsTable || !weaknessesTable) {
+    ui.notifications?.error("Vampiric tables not found");
+    return null;
+  }
+
+  const trait = await drawUniqueItem(actor, traitsTable);
+  const weakness = await drawUniqueItem(actor, weaknessesTable);
+
+  const dieFormula = getResistanceDie();
+  const hpRoll = new Roll(dieFormula);
+  await hpRoll.evaluate();
+
+  const toCreate = [];
+  if (trait) { const td = trait.toObject(); delete td._id; toCreate.push(td); }
+  if (weakness) { const wd = weakness.toObject(); delete wd._id; toCreate.push(wd); }
+  if (toCreate.length) await actor.createEmbeddedDocuments("Item", toCreate);
+
+  await applyResistance(actor, hpRoll.total);
+
+  const flags = getVampiricFlags(actor);
+  await setVampiricFlags(actor, {
+    cursedCount: flags.cursedCount + 1,
+    hitDicePoints: flags.hitDicePoints + hpRoll.total,
+    history: [...flags.history, {
+      ts: Date.now(),
+      trait: trait?.name ?? null,
+      weakness: weakness?.name ?? null,
+      hpRoll: hpRoll.total
+    }]
   });
 
+  await _postCurseCard(actor, trait, weakness, hpRoll.total, hpRoll);
   return { trait, weakness, hpRoll: hpRoll.total };
+}
+
+export async function applyVampiricCurseManual(actor, traitItem, weaknessItem, vhdValue) {
+  const toCreate = [];
+  if (traitItem && !actor.items.find(it => it.name === traitItem.name)) {
+    const td = traitItem.toObject(); delete td._id; toCreate.push(td);
+  }
+  if (weaknessItem && !actor.items.find(it => it.name === weaknessItem.name)) {
+    const wd = weaknessItem.toObject(); delete wd._id; toCreate.push(wd);
+  }
+  if (toCreate.length) await actor.createEmbeddedDocuments("Item", toCreate);
+
+  await applyResistance(actor, vhdValue);
+
+  const flags = getVampiricFlags(actor);
+  await setVampiricFlags(actor, {
+    cursedCount: flags.cursedCount + 1,
+    hitDicePoints: flags.hitDicePoints + vhdValue,
+    history: [...flags.history, {
+      ts: Date.now(),
+      trait: traitItem?.name ?? null,
+      weakness: weaknessItem?.name ?? null,
+      hpRoll: vhdValue
+    }]
+  });
+
+  await _postCurseCard(actor, traitItem, weaknessItem, vhdValue);
+  return { trait: traitItem, weakness: weaknessItem, hpRoll: vhdValue };
 }
 
 export async function cureActor(actor) {
