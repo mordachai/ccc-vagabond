@@ -27,15 +27,18 @@ In Foundry's **Add-on Modules** tab, paste this manifest URL and click Install:
 https://github.com/mordachai/ccc-vagabond/releases/latest/download/module.json
 ```
 
-After enabling the module, import the adventure from the **Compendium** tab.
+After enabling the module, import the adventure from the **Compendium tab >> CCC >> Adventure**. All items will be imported. After that open the Vampiric Curse Panel in the Scene Tools and load the json referenced in the next section and you're ready to go!
+
+<img width="1814" height="887" alt="image" src="https://github.com/user-attachments/assets/f82b0f01-99de-4888-8ce8-6a478bf1ff3a" />
+
 
 ### Required modules
 
-These must be installed and active:
+These must be installed and active (will auto install):
 
-- **[Tale of the Tome Manager](https://foundryvtt.com/packages/totm-manager)** (`totm-manager`)
-- **[Macro Button](https://foundryvtt.com/packages/macro-button)** (`macro-button`)
-- **[Escalating Encounters](https://foundryvtt.com/packages/escalating-encounters): ** the adventure ships with a pre-configured encounter table for it. After installing, import the config from `assets/escalating_encounters/en_escalating-encounters.json`.
+- **Theather of the Mind Manager**
+- **Macro Button**
+- **Escalating Encounters:** the adventure ships with a pre-configured encounter table for it. After installing, import the config from `assets/escalating_encounters/en_escalating-encounters.json`.
 
 ### Recommended modules
 
