@@ -40,17 +40,22 @@ async function applyResistance(actor, hpRoll) {
     }
     const data = worldItem.toObject();
     delete data._id;
-    if (data.effects?.[0]?.changes?.[0]) {
-      data.effects[0].changes[0].value = String(hpRoll);
+    // v14: ActiveEffect changes moved to system.changes; fall back to root for v13 worlds
+    const effectChanges = data.effects?.[0]?.system?.changes ?? data.effects?.[0]?.changes;
+    if (effectChanges?.[0]) {
+      effectChanges[0].value = String(hpRoll);
     }
     await actor.createEmbeddedDocuments("Item", [data]);
   } else {
     const eff = owned.effects.contents[0];
     if (!eff) return;
-    const current = Number(eff.changes?.[0]?.value) || 0;
-    const newChanges = foundry.utils.deepClone(eff.changes);
+    // v14: changes moved to effect.system.changes; fall back to root for v13
+    const changesArray = eff.system?.changes ?? eff.changes;
+    const current = Number(changesArray?.[0]?.value) || 0;
+    const newChanges = foundry.utils.deepClone(changesArray);
     newChanges[0].value = String(current + hpRoll);
-    await eff.update({ changes: newChanges });
+    const updateKey = changesArray === eff.system?.changes ? "system.changes" : "changes";
+    await eff.update({ [updateKey]: newChanges });
   }
   const max = foundry.utils.getProperty(actor, "system.health.max");
   if (typeof max === "number") {

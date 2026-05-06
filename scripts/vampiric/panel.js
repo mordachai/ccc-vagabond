@@ -267,11 +267,19 @@ export class VampiricPanel extends HandlebarsApplicationMixin(ApplicationV2) {
       };
     });
     const rerender = () => {
+      // v14: ApplicationV2.instances() is a static generator replacing the old Map
+      if (typeof ApplicationV2.instances === "function") {
+        for (const app of ApplicationV2.instances()) {
+          if (app instanceof VampiricPanel) { app.render(); return; }
+        }
+      }
+      // v13: foundry.applications.instances is a Map keyed by application id
+      const fapp = foundry.applications.instances?.get?.("ccc-vampiric-panel");
+      if (fapp) { fapp.render(); return; }
+      // AppV1 ui.windows fallback (should not contain AppV2 panels, but kept for safety)
       for (const app of Object.values(ui.windows)) {
         if (app instanceof VampiricPanel) app.render();
       }
-      const fapp = foundry.applications.instances?.get?.("ccc-vampiric-panel");
-      if (fapp) fapp.render();
     };
     Hooks.on("updateActor", (actor, changes) => {
       if (changes.flags?.[MODULE_ID]) rerender();
