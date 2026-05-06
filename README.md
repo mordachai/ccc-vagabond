@@ -1,5 +1,5 @@
 # The Count, the Castle, & the Curse 
-## FoundryVTT Module
+## A FoundryVTT Adventure Module
 
 > **[Get the adventure on DriveThruRPG](https://www.drivethrurpg.com/en/product/458350/the-count-the-castle-the-curse?language=ptpfromptopwywtruepwywtrueptopwywtruepto)** · **[Watch the overview by Deficient Master](https://youtu.be/hNNTk2Rbljo)**
 
