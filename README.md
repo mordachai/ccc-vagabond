@@ -17,6 +17,9 @@ The module puts the Stress Level on screen for the whole table. The GM activates
 
 The other two mechanics are what make this adventure uniquely replayable. The module tracks them per character through a GM-only panel. Players discover how they work by playing — no spoilers here.
 
+<img width="953" height="811" alt="image" src="https://github.com/user-attachments/assets/da2ac475-2423-483a-9893-e54af2fe6932" />
+
+
 ---
 
 ## Installation
@@ -38,7 +41,10 @@ These must be installed and active (will auto install):
 
 - **Theather of the Mind Manager**
 - **Macro Button**
-- **Escalating Encounters:** the adventure ships with a pre-configured encounter table for it. After installing, import the config from `assets/escalating_encounters/en_escalating-encounters.json`.
+- **Escalating Encounters:** the adventure ships with a pre-configured encounter table for it. After installing, import the config from `assets/escalating_encounters/en_escalating-encounters.json`. Check on the image below where to import: **Edit Tables >> Import from JSON**
+
+<img width="953" height="811" alt="image" src="https://github.com/user-attachments/assets/ea40d118-9652-4794-962f-2babeec7e05c" />
+
 
 ### Recommended modules
 
