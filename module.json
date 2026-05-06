@@ -1,7 +1,7 @@
 {
   "id": "ccc-vagabond",
   "title": "Count the Castle and the Curse for Vagabond",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "compatibility": {
     "minimum": "13",
     "verified": "13"
@@ -18,14 +18,23 @@
       "flags": {}
     }
   ],
-  "styles": ["styles/ccc-styles.css"],
-  "esmodules": ["scripts/vampiric/index.js", "scripts/encounters.js"],
-  "scripts": ["scripts/stress-tracker.js"],
+  "styles": [
+    {
+      "src": "styles/ccc-styles.css"
+    }
+  ],
+  "esmodules": [
+    "scripts/vampiric/index.js"
+  ],
+  "scripts": [
+    "scripts/stress-tracker.js"
+  ],
   "languages": [
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "lang/en.json",
+      "flags": {}
     }
   ],
   "socket": true,
@@ -37,7 +46,9 @@
       "name": "The Count, The Castle & The Curse",
       "sorting": "m",
       "color": "#8f0505",
-      "packs": ["adventure"],
+      "packs": [
+        "adventure"
+      ],
       "folders": []
     }
   ],
@@ -84,10 +95,20 @@
         "id": "item-piles-vagabond",
         "type": "module",
         "compatibility": {}
+      },
+      {
+        "id": "token-hud-wildcard",
+        "type": "module",
+        "compatibility": {}
+      },
+      {
+        "id": "art-for-vagabond",
+        "type": "module",
+        "compatibility": {}
       }
     ]
   },
-  "description": "",
   "manifest": "https://github.com/mordachai/ccc-vagabond/releases/latest/download/module.json",
-  "download": "https://github.com/mordachai/ccc-vagabond/releases/latest/download/module.zip"
+  "download": "https://github.com/mordachai/ccc-vagabond/releases/latest/download/module.zip",
+  "description": ""
 }

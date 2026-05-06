@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "tables": {
+    "pC06F7MHUMsfFiUt": {
+      "id": "pC06F7MHUMsfFiUt",
+      "name": "The Castle",
+      "slots": [
+        {
+          "id": "lRKNoRETuRCrdFyz",
+          "label": "The Other Witch",
+          "actorUuid": "Actor.QKyAjYavO2Fg6vY0",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "vhdx6dVDoQ41X04G",
+              "text": "A black cat crosses your path. Attempts to lead you to the @UUID[Macro.uzCnFayhVLaq8KOa]{08-Witch's Kitchen} (p.17).",
+              "soundUuid": ""
+            },
+            {
+              "id": "ZX8yBAAosTFoNONj",
+              "text": "Sounds of someone sweeping as you enter the next room. An animated broom is sweeping the floor. It falls inert if touched, raising the Stress Level by 1.",
+              "soundUuid": ""
+            },
+            {
+              "id": "8R9hXWYTPNN5JT3M",
+              "text": "Sweeping sounds again, this time an overweight naked old lady stands sweeping the floor. Holds a finger up to shush the party, which douses all the lights in this room.",
+              "soundUuid": ""
+            },
+            {
+              "id": "7TnEZ1eatM5jQFbc",
+              "text": "The black cat appears. Follows the party until another encounter appears, then turns into the witch & attacks.",
+              "soundUuid": ""
+            }
+          ]
+        },
+        {
+          "id": "o8xLrGbWh1IbwEQI",
+          "label": "Count's Animated Armor",
+          "actorUuid": "Actor.3qFNa5TGwK3Oj313",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "a3ofwFFSKdWbfBPW",
+              "text": "A wooden stand meant for a suit of armor rests bare in the room. Metallic clinking can be heard in the distance.",
+              "soundUuid": ""
+            },
+            {
+              "id": "6ZkPFQycX36RM23b",
+              "text": "Nails on a chalkboard screech as you enter the room. A thin groove scratched into the floor from something heavy & sharp as a dented crimson helmet adorned with golden angel wings rolls toward you from the darkness, raising the Stress Level by 1.",
+              "soundUuid": ""
+            },
+            {
+              "id": "hGdqEimxaXuLKv4o",
+              "text": "Metallic footsteps slowly approach you. A suit of crimson animated armor steps into the light holding an oversized greatsword & attacks. Falls apart if struck. The pieces disperse in all directions on their own after a pause.",
+              "soundUuid": ""
+            },
+            {
+              "id": "wC5EUe9i4nf8q14q",
+              "text": "Slow metallic footsteps increase in intensity. The armor rushes the party in an attempt to fuse itself with a PC. Reflex Save or be fused with the armor, which swings wildly & attempts to break your arm/leg by hyperextending. Endure Save each turn. Fail results in armor also having an action on your turn. Success gets you out of armor. Armor retreats if able.\n\n\n\nIf destroyed, falls apart and can be worn as @UUID[Compendium.vagabond.armor.Item.yvHynLJxGSilvLwM]{Heavy Armor}. At Midnight, the armor reanimates & attempts to snap the neck of its wearer.",
+              "soundUuid": ""
+            }
+          ]
+        },
+        {
+          "id": "99609omwmtTS3RIe",
+          "label": "Dorothy, the Spider Queen",
+          "actorUuid": "Actor.HgNzvHjeUNAIFOeo",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "CkedXNfnbKUBrMme",
+              "text": "Dozens of little spiders scurry from the cracks within the walls and beneath the furniture, raising the Stress Level by 1 while in this room.",
+              "soundUuid": ""
+            },
+            {
+              "id": "wUmT53Jw0Xn9q51N",
+              "text": "A strange orb completely made up of webbing in the corner of the room → a corpse that looks like one of your PCs. Will Save by the one opening it or have the Stress Level raise by 1. → Inside is that PC’s preferred mundane weapon.",
+              "soundUuid": ""
+            },
+            {
+              "id": "Sw2VsVToopdBgFKU",
+              "text": "Call for a marching order.\n\nWhoever is in the back must make Reflex Save a or be lifted off the ground by a strand of thick webbing from the ceiling, followed by a bite (Reflex Save) for the throat. Whether she hits or misses, a thin woman with too many arms scampers away on the ceiling, dropping the PC.",
+              "soundUuid": ""
+            },
+            {
+              "id": "A8KGCnF7wx7Rnb3O",
+              "text": "Casts Web on the party, a torrent of spiders crawl from the shadows/cracks biting for 1d4 damage, followed by Dorothy rushing on her four spidery legs.\n\nRetreats once a PC is free from web. If killed, turns into a swarm of tiny spiders which scamper to her coffin. Several spiders try to carry away an iron key (p.33)",
+              "soundUuid": ""
+            }
+          ]
+        },
+        {
+          "id": "xRrXJaRXlwRRUJtp",
+          "label": "Sister Geraldine, The Fallen Nun",
+          "actorUuid": "Actor.DqMKib6BuoxcVEHU",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "j1Det61heYCAoLOy",
+              "text": "Black pentagram star streaked on the wall/floor, a holy symbol in the center begins to smoke, then alights on fire & falls off the wall, charred.",
+              "soundUuid": ""
+            },
+            {
+              "id": "4ln0cdt8zdYESrkg",
+              "text": "Various holy symbols pinned to the walls, all of which slowly invert upside-down. Dark blood oozes from the symbols.",
+              "soundUuid": ""
+            },
+            {
+              "id": "FgB2j4tVtdw6Dt18",
+              "text": "Perception check or turn a coner and meet a pale woman dressed in a black robe & habit in a silent stare, eyes black and void. Failure results in Will Save or @UUID[Compendium.vagabond.spells.Item.Hwmj6RwmUigPTFAv]{Hold} Spell as she silently floats away, increasing the Stress Level by 1. Silently floats into the next room regardless.",
+              "soundUuid": ""
+            },
+            {
+              "id": "in7wDk7gtNjZt4Rk",
+              "text": "Portraits of the sitting on an easel/hanging on the walls, +1 portrait per repeat encounter. Lights go out if approached, holy symbols heat and smoke, 1d6 fire unless dropped. Once covered in darkness, she flies out from one of the portraits and bites.\n\nMundane weapons pass right through her unless they are Cleric weapons. Destroying the portraits or attacking her with a spell causes her to flee. If killed, turns into a pillar of salt, which crumbles and drifts towards her coffin. An iron key (p.33) rests in the salt pile.",
+              "soundUuid": ""
+            }
+          ]
+        },
+        {
+          "id": "PRqJeODj5CWihEZs",
+          "label": "Christina, The Seductress",
+          "actorUuid": "Actor.gND0vJkWrZhDWnx4",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "pknKHLqUI6Q5VstF",
+              "text": "Pink waft of mist. Strong scent of flowery perfume, a flirty giggle echoes down the halls.",
+              "soundUuid": ""
+            },
+            {
+              "id": "OtAlLN9vcnMPTJ0A",
+              "text": "Sounds of kissing before you enter the room, followed by screaming that is sharply silenced. Inside the next room is a corpse of what appears to be one of you lying on satin covers & plush pillows—face completely blank as if erased off, as well as an open wound near the jugular. Raises the Stress Level by 1.",
+              "soundUuid": ""
+            },
+            {
+              "id": "hGsrOw45yr2Nv9aF",
+              "text": "Call for a marching order. The one in the lead must make a Will Save to notice one of the other PCs (the copy missing their face from the above result) is acting notably different before they sprout fangs & attempt to bite you. The traitor turns into a pale woman, terribly beautiful were it not for the contorting face as she scampers away like an insect. The original PC walks in from where you came.",
+              "soundUuid": ""
+            },
+            {
+              "id": "8riYyHalnuL7wxeT",
+              "text": "Appears as @UUID[Actor.umZu1HdbwXyx3uNF]{Matilda} (p.26), even if the real Matilda is with the party. Is lost & looking for someone to rescue her. Very clingy. Very flirtatious. Very touchy until she can easily get a bite. If killed, turns into a pink mist with wilted rose petals that trail to her coffin. Leaves an iron key (p.33) which clangs on the ground.",
+              "soundUuid": ""
+            }
+          ]
+        },
+        {
+          "id": "DaLCw8zJvd4Uws4y",
+          "label": "The Count",
+          "actorUuid": "Actor.ktK31zX5tpdontdV",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "wVzFgGt3xivaT0v9",
+              "text": "A sealed note rests under a wine glass filled with blood. Inside is a letter of mock apology as well as a peace offering: drinking the in this glass allows you to choose which Vampiric Trait (p.5) to receive.",
+              "soundUuid": ""
+            },
+            {
+              "id": "J8Va2j19zYg9YZXd",
+              "text": "Lightning strikes, a long shadow of a winged creature flashes in the lights, raising the Stress Level by 1.",
+              "soundUuid": ""
+            },
+            {
+              "id": "dsMgvKNiqZ7qdCup",
+              "text": "Quiet peeps can be heard up ahead. A single bat flutters towards the party, followed by a cacophony of large bats battering the party as they fly past, raising the Stress Level by 1.",
+              "soundUuid": ""
+            },
+            {
+              "id": "7YqabtwUc1cfpHxw",
+              "text": "The Count appears, taunting the party. Will retaliate if attacked once, then flee as a swarm of bats.",
+              "soundUuid": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "triggers": {
+    "changing-rooms": {
+      "id": "changing-rooms",
+      "name": "First explored",
+      "type": "macroNth",
+      "params": {
+        "mode": "oncePerCaller"
+      },
+      "targets": [
+        {
+          "tableId": "pC06F7MHUMsfFiUt",
+          "slotId": null
+        }
+      ]
+    },
+    "every-time": {
+      "id": "every-time",
+      "name": "Every time",
+      "type": "macroNth",
+      "params": {
+        "mode": "unlimited"
+      },
+      "targets": [
+        {
+          "tableId": "pC06F7MHUMsfFiUt",
+          "slotId": null
+        }
+      ]
+    }
+  }
+}
