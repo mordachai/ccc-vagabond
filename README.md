@@ -1,46 +1,64 @@
-# The Count, the Castle, & the Curse — FoundryVTT Module
+# The Count, the Castle, & the Curse 
+## FoundryVTT Module
 
-A gothic horror one-shot for the [Vagabond](https://www.drivethrurpg.com/en/product/123456) system. You're trapped in a vampire's castle. You have until midnight. Good luck.
+> **[Get the adventure on DriveThruRPG](https://www.drivethrurpg.com/en/product/458350/the-count-the-castle-the-curse?language=ptpfromptopwywtruepwywtrueptopwywtruepto)** · **[Watch the overview by Deficient Master](https://youtu.be/hNNTk2Rbljo)**
 
-This module bundles the full adventure and automates its three signature mechanics so the GM can run the whole thing without a spreadsheet in front of them.
+A gothic horror one-shot by A.B. Bo (Deficient Master), adapted for the [Vagabond system](https://foundryvtt.com/packages/vagabond). You're trapped in a vampire's castle. You have until midnight. Good luck.
+
+This is a full FoundryVTT implementation of the adventure — scenes, tokens, journal entries, AI-generated art and music, the works. It also automates the three signature mechanics that make the adventure tick, so the GM can focus on the horror instead of the math.
 
 ---
 
-## What this module does
+## How it works
 
-**The Count, the Castle, & the Curse** is built around a Stress Level that rises and falls as players explore and make decisions. Every single player-facing d20 roll is made against it — it's the difficulty, the AC, the save target, all at once. The module puts that number on screen for everyone and keeps it wired into the Vagabond roll system automatically. The GM clicks it up or down; the math happens.
+**Stress Level** is the number everyone plays against. In Vagabond there's no AC — each player already knows the difficulty they need to hit from their own sheet. The Stress Level adds to that. Every room explored, every terrible thing witnessed, every real-time hour that passes pushes it up. It goes down too, but not easily.
 
-The adventure also has a progressive curse mechanic that affects each PC individually over the course of the session. The module handles all of that through a GM-only panel — tracking the state of the curse for every character, managing what gets applied, and keeping a full history. Players discover what the curse does by playing.
+The module puts the Stress Level on screen for the whole table. The GM activates it in the module settings, and from there it feeds directly into every d20 roll through the Vagabond system — no manual calculation needed. It runs from 0 to 5.
 
-When the time comes for the final reckoning, the module runs it and posts the result to chat.
+The other two mechanics are what make this adventure uniquely replayable. The module tracks them per character through a GM-only panel. Players discover how they work by playing — no spoilers here.
 
 ---
 
 ## Installation
 
-In Foundry's **Add-on Modules** tab, paste this manifest URL:
+In Foundry's **Add-on Modules** tab, paste this manifest URL and click Install:
 
 ```
 https://github.com/mordachai/ccc-vagabond/releases/latest/download/module.json
 ```
 
-**Requirements:**
-- FoundryVTT v13+
-- System: `vagabond`
-- Modules: `totm-manager`, `macro-button`
+After enabling the module, import the adventure from the **Compendium** tab.
 
-After enabling the module, import the adventure from the **Compendium** tab. Everything else — scenes, tokens, journal entries, roll tables — comes with it.
+### Required modules
+
+These must be installed and active:
+
+- **[Tale of the Tome Manager](https://foundryvtt.com/packages/totm-manager)** (`totm-manager`)
+- **[Macro Button](https://foundryvtt.com/packages/macro-button)** (`macro-button`)
+- **[Escalating Encounters](https://foundryvtt.com/packages/escalating-encounters): ** the adventure ships with a pre-configured encounter table for it. After installing, import the config from `assets/escalating_encounters/en_escalating-encounters.json`.
+
+### Recommended modules
+
+These aren't required but the adventure was built with them in mind:
+
+- **[Item Piles](https://foundryvtt.com/packages/item-piles)** + **[Item Piles – Vagabond](https://foundryvtt.com/packages/item-piles-vagabond)** — for loot and item management
+- **[Token HUD Wildcard](https://foundryvtt.com/packages/token-hud-wildcard)** — for the NPCs with alternate token forms
+- **[Art for Vagabond](https://foundryvtt.com/packages/art-for-vagabond)** — additional artwork for the system NPCs
 
 ---
 
 ## Running the adventure
 
-The Stress Level counter appears in the top-right corner of the screen, visible to everyone. Only the GM can change it (left click +1, right click −1). It starts at 10.
+Enable the **Stress Level** in the module settings before starting. The counter will appear in the top-right corner, visible to everyone. Only the GM can adjust it — left click to increase, right click to decrease.
 
-The **Curse Panel** lives in the token layer controls (the blood drop icon, GM only). It shows every player character and their current state. Everything the GM needs to track the curse is in there — applying it, managing consequences, and resolving the endgame when midnight arrives.
+The **Curse Panel** lives in the token layer controls (blood drop icon, GM only). Everything needed to track and manage the curse mechanics for each PC is in there.
 
-The adventure pack has everything pre-configured. Import it, and run.
+The adventure pack has everything else pre-configured. Import it, dim the lights, and run.
 
 ---
 
-Made with [Deficient Master](https://youtu.be/hNNTk2Rbljo).
+*Art and music generated with AI tools.*
+
+---
+
+“This is an independent product published under the Land of the Blind Third-Party License and is not affiliated with Land of the Blind, LLC. Vagabond // Pulp Fantasy RPG © 2025 Land of theBlind, LLC.”
