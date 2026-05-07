@@ -24,8 +24,10 @@ export async function applyTrinket(actor) {
 
   const data = worldItem.toObject();
   delete data._id;
-  if (data.effects?.[0]?.changes?.[0]) {
-    data.effects[0].changes[0].value = String(hpRoll.total);
+  // v14: ActiveEffect changes moved to system.changes; fall back to root for v13 worlds
+  const effectChanges = data.effects?.[0]?.system?.changes ?? data.effects?.[0]?.changes;
+  if (effectChanges?.[0]) {
+    effectChanges[0].value = String(hpRoll.total);
   }
   await actor.createEmbeddedDocuments("Item", [data]);
 
