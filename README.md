@@ -41,7 +41,7 @@ These must be installed and active (will auto install):
 
 - **Theather of the Mind Manager**
 - **Macro Button**
-- **Escalating Encounters:** the adventure ships with a pre-configured encounter table for it. After installing, import the config from `assets/escalating_encounters/en_escalating-encounters.json`. Check on the image below where to import: **Edit Tables >> Import from JSON**
+- **Escalating Encounters:** the adventure ships with a pre-configured encounter table for it. After installing, import the config file from here **[CCC Escalation Encounters](https://github.com/mordachai/ccc-vagabond/tree/5e51406db8b3416c7ff4b6def8d00c2877543fee/assets/escalating_encounters)**. The same file is on `modules/ccc-vagabond/assets/escalating_encounters`. Check on the image below where to import: **Edit Tables >> Import from JSON**
 
 <img width="953" height="811" alt="image" src="https://github.com/user-attachments/assets/ea40d118-9652-4794-962f-2babeec7e05c" />
 
