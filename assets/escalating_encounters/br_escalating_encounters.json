@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "tables": {
+    "pC06F7MHUMsfFiUt": {
+      "id": "pC06F7MHUMsfFiUt",
+      "name": "O Castelo",
+      "slots": [
+        {
+          "id": "lRKNoRETuRCrdFyz",
+          "label": "A Outra Bruxa",
+          "actorUuid": "Actor.QKyAjYavO2Fg6vY0",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "vhdx6dVDoQ41X04G",
+              "text": "Um gato preto cruza seu caminho. Tenta levar você até o @UUID[Macro.uzCnFayhVLaq8KOa]{08-Witch's Kitchen} (p.17).",
+              "soundUuid": ""
+            },
+            {
+              "id": "ZX8yBAAosTFoNONj",
+              "text": "Sons de alguém varrendo ao entrar na próxima sala. Uma vassoura animada varre o chão. Ela fica inerte se tocada, aumentando o Nível de Estresse em 1.",
+              "soundUuid": ""
+            },
+            {
+              "id": "8R9hXWYTPNN5JT3M",
+              "text": "Sons de varrer novamente, desta vez uma velha senhora nua e obesa está varrendo o chão. Levanta um dedo pedindo silêncio, o que apaga todas as luzes desta sala.",
+              "soundUuid": ""
+            },
+            {
+              "id": "7TnEZ1eatM5jQFbc",
+              "text": "O gato preto aparece. Segue o grupo até outro encontro surgir, então se transforma na bruxa e ataca.",
+              "soundUuid": ""
+            }
+          ]
+        },
+        {
+          "id": "o8xLrGbWh1IbwEQI",
+          "label": "Armadura Animada do Conde",
+          "actorUuid": "Actor.3qFNa5TGwK3Oj313",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "a3ofwFFSKdWbfBPW",
+              "text": "Um suporte de madeira destinado a uma armadura está vazio na sala. Um tilintar metálico pode ser ouvido ao longe.",
+              "soundUuid": ""
+            },
+            {
+              "id": "6ZkPFQycX36RM23b",
+              "text": "Unhas em um quadro-negro rangem ao entrar na sala. Um sulco fino arranhado no chão por algo pesado e afiado, bem como um capacete carmesim amassado adornado com asas de anjo douradas, rola em sua direção a partir da escuridão, aumentando o Nível de Estresse em 1.",
+              "soundUuid": ""
+            },
+            {
+              "id": "hGdqEimxaXuLKv4o",
+              "text": "Passos metálicos se aproximam lentamente. Uma armadura animada carmesim entra na luz segurando uma espada grande exagerada e ataca. Desmorona se atingida. As peças se dispersam em todas as direções por conta própria após uma pausa.",
+              "soundUuid": ""
+            },
+            {
+              "id": "wC5EUe9i4nf8q14q",
+              "text": "Passos metálicos lentos aumentam de intensidade. A armadura corre contra o grupo na tentativa de se fundir com um PJ. Teste de Reflexos ou seja fundido com a armadura, que golpeia selvagemente e tenta quebrar seu braço/perna por hiperextensão. Teste de Resistência a cada turno. Falha resulta na armadura também ter uma ação no seu turno. Sucesso o libera da armadura. A armadura recua se possível.\n\n\n\nSe destruída, desmorona e pode ser usada como @UUID[Compendium.vagabond.armor.Item.yvHynLJxGSilvLwM]{Armadura Pesada}. À Meia-Noite, a armadura reanima e tenta quebrar o pescoço de quem a estiver vestindo.",
+              "soundUuid": ""
+            }
+          ]
+        },
+        {
+          "id": "99609omwmtTS3RIe",
+          "label": "Dorothy, a Rainha das Aranhas",
+          "actorUuid": "Actor.HgNzvHjeUNAIFOeo",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "CkedXNfnbKUBrMme",
+              "text": "Dezenas de pequenas aranhas saem correndo das fendas nas paredes e debaixo dos móveis, aumentando o Nível de Estresse em 1 enquanto estiverem nesta sala.",
+              "soundUuid": ""
+            },
+            {
+              "id": "wUmT53Jw0Xn9q51N",
+              "text": "Uma estranha esfera feita completamente de teia no canto da sala → um cadáver que se parece com um dos seus PJs. Teste de Vontade de quem abrir ou aumente o Nível de Estresse em 1. → Dentro está a arma mundana preferida daquele PJ.",
+              "soundUuid": ""
+            },
+            {
+              "id": "Sw2VsVToopdBgFKU",
+              "text": "Peça a ordem de marcha.\n\nQuem estiver na retaguarda deve fazer um Teste de Reflexos ou ser erguido do chão por um fio grosso de teia vindo do teto, seguido de uma mordida (Teste de Reflexos) na garganta. Seja acertando ou errando, uma mulher magra com braços demais foge correndo pelo teto, soltando o PJ.",
+              "soundUuid": ""
+            },
+            {
+              "id": "A8KGCnF7wx7Rnb3O",
+              "text": "Lança Teia no grupo, uma torrente de aranhas sai das sombras/fendas mordendo por 1d4 de dano, seguida de Dorothy correndo em suas quatro pernas aracnídeas.\n\nRecua assim que um PJ estiver livre da teia. Se morta, transforma-se em um enxame de aranhas minúsculas que fogem para seu caixão. Várias aranhas tentam carregar uma chave de ferro (p.33).",
+              "soundUuid": ""
+            }
+          ]
+        },
+        {
+          "id": "xRrXJaRXlwRRUJtp",
+          "label": "Irmã Geraldine, A Freira Caída",
+          "actorUuid": "Actor.DqMKib6BuoxcVEHU",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "j1Det61heYCAoLOy",
+              "text": "Pentagrama preto riscado na parede/chão, um símbolo sagrado no centro começa a fumar, depois se incendeia e cai da parede, carbonizado.",
+              "soundUuid": ""
+            },
+            {
+              "id": "4ln0cdt8zdYESrkg",
+              "text": "Vários símbolos sagrados pregados nas paredes, todos lentamente se invertem de cabeça para baixo. Sangue escuro escorre dos símbolos.",
+              "soundUuid": ""
+            },
+            {
+              "id": "FgB2j4tVtdw6Dt18",
+              "text": "Teste de Percepção ou vire uma esquina e encontre uma mulher pálida vestida com um manto e hábito pretos em um olhar silencioso, olhos negros e vazios. Falha resulta em Teste de Vontade ou sofra o Feitiço @UUID[Compendium.vagabond.spells.Item.Hwmj6RwmUigPTFAv]{Hold} enquanto ela flutua silenciosamente para longe, aumentando o Nível de Estresse em 1. Flutua silenciosamente para a próxima sala de qualquer forma.",
+              "soundUuid": ""
+            },
+            {
+              "id": "in7wDk7gtNjZt4Rk",
+              "text": "Retratos dela em um cavalete ou pendurados nas paredes, +1 retrato por encontro repetido. As luzes se apagam se aproximados, símbolos sagrados esquentam e soltam fumaça, 1d6 de fogo a menos que sejam largados. Uma vez coberto pela escuridão, ela voa para fora de um dos retratos e morde.\n\nArmas mundanas passam direto por ela, a menos que sejam armas de Clérigo. Destruir os retratos ou atacá-la com magia a faz fugir. Se morta, transforma-se em uma coluna de sal que desmorona e flutua em direção ao seu caixão. Uma chave de ferro (p.33) repousa na pilha de sal.",
+              "soundUuid": ""
+            }
+          ]
+        },
+        {
+          "id": "PRqJeODj5CWihEZs",
+          "label": "Christina, a Sedutora",
+          "actorUuid": "Actor.gND0vJkWrZhDWnx4",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "pknKHLqUI6Q5VstF",
+              "text": "Névoa rosa flutuante. Forte cheiro de perfume floral, uma risadinha sedutora ecoa pelos corredores.",
+              "soundUuid": ""
+            },
+            {
+              "id": "OtAlLN9vcnMPTJ0A",
+              "text": "Sons de beijos antes de entrar na sala, seguidos de um grito que é bruscamente silenciado. Dentro da próxima sala há um cadáver que parece ser um de vocês deitado em lençóis de cetim e travesseiros macios — o rosto completamente em branco como se tivesse sido apagado, além de uma ferida aberta perto da jugular. Aumenta o Nível de Estresse em 1.",
+              "soundUuid": ""
+            },
+            {
+              "id": "hGsrOw45yr2Nv9aF",
+              "text": "Peça a ordem de marcha. Quem estiver na frente deve fazer um Teste de Vontade para notar que um dos outros PJs (a cópia sem rosto do resultado acima) está agindo de forma notadamente diferente antes que eles brotem presas e tentem morder você. O traidor se transforma em uma mulher pálida, terrivelmente bela não fosse pelo rosto contorcido enquanto ela foge como um inseto. O PJ original entra de onde vocês vieram.",
+              "soundUuid": ""
+            },
+            {
+              "id": "8riYyHalnuL7wxeT",
+              "text": "Aparece como @UUID[Actor.umZu1HdbwXyx3uNF]{Matilda} (p.26), mesmo que a Matilda real esteja com o grupo. Está perdida e procurando alguém para resgatá-la. Muito carente. Muito sedutora. Muito afetuosa até conseguir morder facilmente. Se morta, transforma-se em névoa rosa com pétalas de rosa murchas que levam até seu caixão. Deixa uma chave de ferro (p.33) que tilinta no chão.",
+              "soundUuid": ""
+            }
+          ]
+        },
+        {
+          "id": "DaLCw8zJvd4Uws4y",
+          "label": "O Conde",
+          "actorUuid": "Actor.ktK31zX5tpdontdV",
+          "journalUuid": "",
+          "outcomes": [
+            {
+              "id": "wVzFgGt3xivaT0v9",
+              "text": "Um bilhete lacrado repousa sob uma taça de vinho cheia de sangue. Dentro há uma carta de desculpas zombeteiras e também uma oferta de paz: beber o conteúdo desta taça permite que você escolha qual Traço Vampírico (p.5) receber.",
+              "soundUuid": ""
+            },
+            {
+              "id": "J8Va2j19zYg9YZXd",
+              "text": "Um raio cai, uma longa sombra de uma criatura alada pisca nas luzes, aumentando o Nível de Estresse em 1.",
+              "soundUuid": ""
+            },
+            {
+              "id": "dsMgvKNiqZ7qdCup",
+              "text": "Pequenos guinchos podem ser ouvidos adiante. Um único morcego voa em direção ao grupo, seguido por um cacofonia de morcegos grandes que atacam o grupo enquanto passam voando, aumentando o Nível de Estresse em 1.",
+              "soundUuid": ""
+            },
+            {
+              "id": "7YqabtwUc1cfpHxw",
+              "text": "O Conde aparece, provocando o grupo. Revidará se atacado uma vez, então foge como um enxame de morcegos.",
+              "soundUuid": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "triggers": {
+    "changing-rooms": {
+      "id": "changing-rooms",
+      "name": "First explored",
+      "type": "macroNth",
+      "params": {
+        "mode": "oncePerCaller"
+      },
+      "targets": [
+        {
+          "tableId": "pC06F7MHUMsfFiUt",
+          "slotId": null
+        }
+      ]
+    },
+    "every-time": {
+      "id": "every-time",
+      "name": "Every time",
+      "type": "macroNth",
+      "params": {
+        "mode": "unlimited"
+      },
+      "targets": [
+        {
+          "tableId": "pC06F7MHUMsfFiUt",
+          "slotId": null
+        }
+      ]
+    }
+  }
+}

@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('c:/Users/Gus/Documents/FoundryVTT-WindowsPortable-13.346/Data/modules/ccc-vagabond/lang/en.json','utf8'\\)\\); console.log\\('ok'\\)\")"
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('c:/Users/Gus/Documents/FoundryVTT-WindowsPortable-13.346/Data/modules/ccc-vagabond/lang/en.json','utf8'\\)\\); console.log\\('ok'\\)\")",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:m.youtube.com)",
+      "WebSearch",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(X11; Linux x86_64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://www.youtube.com/watch?v=hNNTk2Rbljo\")",
+      "Bash(ls /home/gus/Documentos/)",
+      "Read(//home/gus/Documentos/**)"
     ]
   }
 }

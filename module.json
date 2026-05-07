@@ -1,7 +1,7 @@
 {
   "id": "ccc-vagabond",
   "title": "Count the Castle and the Curse for Vagabond",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "compatibility": {
     "minimum": "13",
     "verified": "14"
