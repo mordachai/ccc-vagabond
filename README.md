@@ -5,20 +5,21 @@
 
 A gothic horror one-shot by A.B. Bo (Deficient Master), adapted for the [Vagabond system](https://foundryvtt.com/packages/vagabond). You're trapped in a vampire's castle. You have until midnight. Good luck.
 
-This is a full FoundryVTT implementation of the adventure — scenes, tokens, journal entries, AI-generated art and music, the works. It also automates the three signature mechanics that make the adventure tick, so the GM can focus on the horror instead of the math.
+This is a full FoundryVTT implementation of the adventure — scenes, tokens, journal entries, AI-generated art and music, all in a Theater of the Mind build. This module automates automates the three signature mechanics that make the adventure tick, so the GM can focus on the horror instead of the math.
 
 ---
 
 ## How it works
 
-**Stress Level** is the number everyone plays against. In Vagabond there's no AC — each player already knows the difficulty they need to hit from their own sheet. The Stress Level adds to that. Every room explored, every terrible thing witnessed, every real-time hour that passes pushes it up. It goes down too, but not easily.
+- **Stress Level** the party is in a pinch and it shows. In Vagabond there's no AC — each player already knows the difficulty they need to hit from their own sheet. The Stress Level adds to that. Every room explored, every terrible thing witnessed, every real-time hour that passes pushes it up. It can go down too, but not easily and ometimes at a cost. The module puts the Stress Level on screen for the whole table. The GM activates it in the module settings, and from there it feeds directly into every d20 roll through the Vagabond system — no manual calculation needed. It runs from 0 to 5.
 
-The module puts the Stress Level on screen for the whole table. The GM activates it in the module settings, and from there it feeds directly into every d20 roll through the Vagabond system — no manual calculation needed. It runs from 0 to 5.
+- **The Curse** in the scene tools panel you will find the Vampiric Curse Panel that will help you sort out all thing related to this part of the adventure, from Vampiric Traits, Weaknesses and Hit Dice to Personal Trinkets.
 
-The other two mechanics are what make this adventure uniquely replayable. The module tracks them per character through a GM-only panel. Players discover how they work by playing — no spoilers here.
+- **Escalating Encounters** this adventure module automatically install the Escalating Encounters module. In the module assets folder and on the instruction below you will find the json file that automatically configures the encounter table for you. You can roll or decide the encounters manually, but loading form this file gives you the automation in sync with the scene navigation controls.
+
+- **Scene navigation** in The Castle scene there is a panel with all castle rooms. Its only visible to the GM. Click on a room there will load the scene image for all players, change the music and in most rooms throw in the chat, also only visible for the GM, the escalating encounter outcome for that room. All of these buttons are powered by the macros you find on the Macros menu, changing things there changes what the button does. Ths Theather of the Mind Manager module is the one taking care of the scene swapping.
 
 <img width="953" height="811" alt="image" src="https://github.com/user-attachments/assets/da2ac475-2423-483a-9893-e54af2fe6932" />
-
 
 ---
 
