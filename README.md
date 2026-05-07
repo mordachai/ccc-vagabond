@@ -67,7 +67,7 @@ The adventure pack has everything else pre-configured. Import it, dim the lights
 
 ---
 
-*Art generated with AI tools. Music from Pixabay* Feel free to populate it with your own assets, its pretty easy to remake it for your table. All systems and apps inside the module will keep working without issues.
+*Art generated with AI tools. Music from Pixabay.* Feel free to populate it with your own assets, its pretty easy to remake it for your table. All systems and apps inside the module will keep working without issues.
 
 ---
 
